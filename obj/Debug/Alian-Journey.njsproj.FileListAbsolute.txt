@@ -1,3 +1,0 @@
-D:\Development\Websites\Alian-Journey\Alian-Journey\obj\Debug\Alian-Journey.njsproj.AssemblyReference.cache
-D:\Development\Websites\Alian-Journey\Alian-Journey\obj\Debug\Alian-Journey.njsproj.CoreCompileInputs.cache
-D:\Development\Websites\Alian-Journey\Alian-Journey\bin\Microsoft.NodejsTools.WebRole.dll
