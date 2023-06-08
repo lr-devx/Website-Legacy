@@ -1,18 +1,15 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <ManyWorld msg="Hello to many world"/>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
-    import ManyWorld from "./components/ManyWorld.vue"
+    import HelloWorld from "./components/HelloWorld.vue"
 
     export default {
-        name: 'App',
+        name: "App",
         components: {
-            HelloWorld,
-            ManyWorld
+            HelloWorld
         }
     }
 </script>
