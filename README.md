@@ -1,7 +1,7 @@
 # Alian's Journey Website
 This website contains my projects, blogs and more.
 
-## Build debug
+### Build debug
 ```
 npm install
 npm run serve
