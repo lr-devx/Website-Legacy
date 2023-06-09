@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    inset: 0;
+}
+
+#message {
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Segoe UI', "Tahoma", "Geneva", "Verdana", "sans-serif";
+}
