@@ -39,6 +39,7 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
@@ -47,11 +48,21 @@
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
     <Content Include="README.md" />
+    <Content Include="src\router.js" />
     <Content Include="src\App.vue" />
-    <Content Include="src\components\Navigation.vue">
+    <Content Include="src\assets\navbar.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\NavigationBar.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\main.js" />
+    <Content Include="src\views\AboutView.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\views\HomeView.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="vue.config.js" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

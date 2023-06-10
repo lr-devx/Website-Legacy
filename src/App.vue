@@ -1,9 +1,10 @@
 <template>
     <Navigation />
+    <router-view />
 </template>
 
 <script>
-    import Navigation from "./components/Navigation.vue"
+    import Navigation from "./components/NavigationBar.vue"
 
     export default {
         name: "App",
