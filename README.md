@@ -1,13 +1,17 @@
 # Alian's Journey Website
 This website contains my projects, blogs and more.
 
-### Build debug
+### Install dependencies
 ```
 npm install
-npm run serve
 ```
 
-### Build distribution
+### Run dev environnement
+```
+npm run dev
+```
+
+### Build for production
 ```
 npm run build
 ```
