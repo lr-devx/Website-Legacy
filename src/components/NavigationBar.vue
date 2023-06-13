@@ -27,11 +27,10 @@
 <style scoped>
     #container {
         height: 5rem;
-        width: 100%;
-
+        max-width: 1920px;
+        margin: auto;
         display: flex;
         align-items: center;
-        
         background-color: red;
     }
 
@@ -42,18 +41,15 @@
     #navbar {
         height: 5rem;
         width: 100%;
-        
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        
         background-color: orangered;
     }
 
     #navbar-items {
         list-style: none;
         margin: 2rem;
-
         display: flex;
     }
 
