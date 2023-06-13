@@ -12,10 +12,6 @@
     "path": "/projects"
   },
   {
-    "name": "Pricing",
-    "path":  "/pricing"
-  },
-  {
     "name": "About",
     "path": "/about"
   }

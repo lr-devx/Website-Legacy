@@ -17,6 +17,7 @@
                 <li v-for="item in navItems" :key="item.name">
                     <a :href="item.path">{{ item.name }}</a>
                 </li>
+                <button id="shiny-button" @click="$router.push('/pricing')">Pricing</button>
             </ul>
             <input id="navbar-switcher" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
         </div>
@@ -24,6 +25,9 @@
     <label id="navbar-menu" v-if="isNavbarShown">
         <li v-for="item in navItems" :key="item.name">
             <a :href="item.path">{{ item.name }}</a>
+        </li>
+        <li id="shiny-item">
+            <a href="/pricing">Pricing</a>
         </li>
     </label>
 </template>
@@ -55,6 +59,7 @@
         list-style: none;
         margin: 2rem;
         display: flex;
+        align-items: center;
     }
 
     #navbar-items li {
@@ -63,6 +68,17 @@
 
     #navbar-items a {
         text-decoration: none;
+    }
+
+    #shiny-button {
+        margin-left: 12px;
+        width: 128px;
+        height: 40px;
+        border: 0;
+    }
+
+    #shiny-button:hover {
+        background-color: red;
     }
 
     #navbar-switcher {
@@ -92,7 +108,7 @@
         background-color: yellow;
     }
 
-    @media (max-width: 600px) { 
+    @media (max-width: 720px) { 
         #navbar-items {
             display: none;
         }

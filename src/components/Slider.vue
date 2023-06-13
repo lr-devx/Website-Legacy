@@ -69,4 +69,29 @@
     #slide-button:hover {
         background-color: red;
     }
+
+    @media (max-width: 720px) {
+        #slide-title {
+            text-align: center;
+        }
+
+        #slide-description {
+            text-align: center;
+            width: auto;
+        }
+
+        #clickable-next {
+            display: none;
+        }
+
+        #clickable-previous {
+            display: none;
+        }
+
+        #slide-button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 </style>
