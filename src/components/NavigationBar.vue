@@ -7,6 +7,35 @@
         if (window.innerWidth > 600 && isNavbarShown.value)
             isNavbarShown.value = false;
     });
+
+    window.addEventListener("scroll", () => {
+        if (window.innerWidth < 720) {
+            return;
+        }
+        
+        var backButton = document.getElementById("back-to-top");
+        var footer = document.getElementsByClassName("footer")[0];
+
+        var content = document.documentElement;
+        if (content.scrollTop > 80) {
+            backButton.style.display = "block";
+        } else {
+            backButton.style.display = "none";
+        }
+
+        var currentEndAxis = window.innerHeight + content.scrollTop;
+        var endAxis = content.scrollHeight;
+         
+        if (currentEndAxis > endAxis-footer.clientHeight) {
+            backButton.style.bottom = `${footer.clientHeight - (endAxis-currentEndAxis) +10}px`;
+        } else {
+            backButton.style.bottom = "10px";
+        }
+    });
+
+    function backToTop() {
+        document.documentElement.scrollTop = 0;
+    }
 </script>
 
 <template>
@@ -30,6 +59,7 @@
             <a href="/pricing">{{ $t("pricing") }}</a>
         </li>
     </label>
+    <button id="back-to-top" @click="backToTop">Back to top</button>
 </template>
 
 <style scoped>
@@ -108,8 +138,22 @@
         background-color: yellow;
     }
 
+    #back-to-top {
+        width: 128px;
+        height: 32px;
+        position: fixed;
+        display: none;
+        bottom: 10px;
+        right: 10px;
+        border: 0;
+    }
+
     @media (max-width: 720px) { 
         #navbar-items {
+            display: none;
+        }
+
+        #back-to-top {
             display: none;
         }
 

@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <div id="container">
+    <div id="container" class="footer">
         <select id="language-switch" v-model="selectedLanguage" @change="changeLanguage">
             <option v-for="language in supportedLanguages" :value="language.code">
                 {{ language.name }}
@@ -94,7 +94,7 @@
         color: white;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1060px) {
         #container {
             display: block;
             padding-top: 12px;
