@@ -8,6 +8,10 @@ const routes = [
     {
         "path": "/about",
         "component": () => import("./views/AboutView.vue")
+    },
+    {
+        "path": "/:catchAll(.*)",
+        "component": () => import("./views/NotFoundView.vue")
     }
 ]
 
