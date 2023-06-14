@@ -5,12 +5,12 @@
 <template>
     <Slider/>
     <div id="container">
-        <h1 id="main-title">Whoami?</h1>
+        <h1 id="main-title">{{ $t("whoami") }}</h1>
         <h3 id="main-description">
-            <p>According to the Windows&reg; Command Prompt I'm "laptop\aliandead".</p>
-            <p>But in reality, I'm a french developer with 4 years of experience.</p>
+            <p>{{ $t("whoami-description-1") }}</p>
+            <p>{{ $t("whoami-description-2") }}</p>
             <br>
-            <p>I made many projects over the years and gained a decent amount of knowledge in Computer Science.</p>
+            <p>{{ $t("whoami-description-3") }}</p>
         </h3>
     </div>
 </template>
@@ -24,7 +24,7 @@
 
     #main-title {
         color: white;
-        padding-top: 64px;
+        padding-top: 32px;
         padding-bottom: 16px;
         text-align: center;
     }

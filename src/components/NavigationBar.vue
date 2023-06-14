@@ -1,6 +1,6 @@
 <script setup>
     import navItems from "../assets/navbar.json";
-    import { ref } from 'vue'
+    import { ref } from "vue"
 
     const isNavbarShown = ref(false);
     window.addEventListener('resize', function(e) {
@@ -15,19 +15,19 @@
         <div id="navbar">
             <ul id="navbar-items">
                 <li v-for="item in navItems" :key="item.name">
-                    <a :href="item.path">{{ item.name }}</a>
+                    <a :href="item.path">{{ $t(item.name) }}</a>
                 </li>
-                <button id="shiny-button" @click="$router.push('/pricing')">Pricing</button>
+                <button id="shiny-button" @click="$router.push('/pricing')">{{ $t("pricing") }}</button>
             </ul>
             <input id="navbar-switcher" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
         </div>
     </div>
     <label id="navbar-menu" v-if="isNavbarShown">
         <li v-for="item in navItems" :key="item.name">
-            <a :href="item.path">{{ item.name }}</a>
+            <a :href="item.path">{{ $t(item.name) }}</a>
         </li>
         <li id="shiny-item">
-            <a href="/pricing">Pricing</a>
+            <a href="/pricing">{{ $t("pricing") }}</a>
         </li>
     </label>
 </template>

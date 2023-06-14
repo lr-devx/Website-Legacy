@@ -4,13 +4,13 @@
 
 <template>
     <div id="slider-container">
-        <div id="clickable-previous" />
+        <div id="slider-previous" />
         <div id="slider-data">
             <h1 id="slide-title">Title</h1>
             <h3 id="slide-description">Description</h3>
             <button id="slide-button">Button</button>
         </div>
-        <div id="clickable-next" />
+        <div id="slider-next" />
     </div>
 </template>
 
@@ -31,13 +31,13 @@
         background-color: green;
     }
 
-    #clickable-previous {
+    #slider-previous {
         width: 12rem;
         height: 32rem;
         background-color: deeppink;
     }
 
-    #clickable-next {
+    #slider-next {
         width: 12rem;
         height: 32rem;
         background-color: purple;
@@ -80,11 +80,11 @@
             width: auto;
         }
 
-        #clickable-next {
+        #slider-next {
             display: none;
         }
 
-        #clickable-previous {
+        #slider-previous {
             display: none;
         }
 
