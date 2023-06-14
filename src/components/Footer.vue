@@ -2,9 +2,11 @@
     import { useI18n } from "vue-i18n";
     import { ref } from "vue"
     import supportedLanguages from "../assets/languages.json";
+    import socialinks from "../assets/links.json";
 
     const i18n = useI18n();
     const selectedLanguage = ref(i18n.locale.value);
+    const links = ref(socialinks);
 
     function changeLanguage(e) {
         i18n.locale.value = e.target.selectedOptions[0].value;
@@ -21,21 +23,26 @@
         </select>
         <h3 id="copyright"> {{ $t("copyright") }}</h3>
         <div id="external-items">
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
+            <a target="_blank" :href="links.youtube">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+            <a target="_blank" :href="links.github">
+                <i class="fa fa-github"></i>
+            </a>
+            <a target="_blank" :href="links.twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
         </div>
     </div>
 </template>
 
 <style scoped>
     #container {
-        height: 64px;
         max-width: 1920px;
-        margin: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-left: auto;
+        margin-right: auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
@@ -56,6 +63,7 @@
     }
 
     #copyright {
+        font-size: fit-content;
         margin-left: auto;
         margin-right: auto;
         color: white;
@@ -67,10 +75,47 @@
         align-items: center;
     }
 
-    #external-items img {
-        margin-right: 10px;
-        width: 16px;
-        height: 16px;
-        background-color: red;
+    #external-items a {
+        text-decoration: none;
+        margin-right: 12px;
+        font-size: 2rem;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #external-items i {
+        color: black;
+    }
+
+    #external-items i:hover {
+        color: white;
+    }
+
+    @media (max-width: 1024px) {
+        #container {
+            display: block;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        #language-switch {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #copyright {
+            padding: 12px;
+            text-align: center;
+        }
+
+        #external-items {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+        }
     }
 </style>
