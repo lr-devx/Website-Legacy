@@ -1,15 +1,25 @@
+<script setup>
+    import { onMounted, ref } from "vue";
+    const container = ref(null);
+
+    onMounted(() => {
+        container.value.style.minHeight = `${document.documentElement.clientHeight - (80 + 64)}px`;
+    });
+
+    document.title = "Alian/DEAD - Not Found";
+</script>
+
 <template>
-    <div id="container">
+    <div id="container" ref="container">
         <div id="text-container">
-            <h2>This doesn't seem right</h2>
-            <h5>Looks like the page you are looking for doesn't exist!</h5>
+            <h2>{{ $t("not-found-title") }}</h2>
+            <h5>{{ $t("not-found-description") }}</h5>
         </div>
     </div>
 </template>
 
 <style scoped>
     #container {
-        height: calc(100vh - (80px + 64px));
         max-width: 1920px;
         margin: auto;
         display: flex;

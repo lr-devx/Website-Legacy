@@ -2,10 +2,14 @@ import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import raw from "vite-raw-plugin";
 
 export default defineConfig({
   plugins: [
-    vue()
+    vue(),
+    raw({
+      fileRegex: /\.md$/
+    })
   ],
   resolve: {
     alias: {

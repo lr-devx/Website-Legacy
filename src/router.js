@@ -6,6 +6,22 @@ const routes = [
         "component": () => import("./views/HomeView.vue")
     },
     {
+        "path": "/blogs",
+        "component": () => import("./views/BlogListView.vue")
+    },
+    {
+        "path": "/blogs/:id",
+        "component": () => import("./views/BlogView.vue")
+    },
+    {
+        "path": "/projects",
+        "component": () => import("./views/ProjectView.vue")
+    },
+    {
+        "path": "/pricing",
+        "component": () => import("./views/PricingView.vue")
+    },
+    {
         "path": "/about",
         "component": () => import("./views/AboutView.vue")
     },

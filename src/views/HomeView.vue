@@ -2,6 +2,8 @@
     import Slider from "../components/Slide.vue";
     import ProjectCard from "../components/ProjectCard.vue";
     import Projects from "../assets/projects_home.json";
+
+    document.title = "Alian/DEAD - Home";
 </script>
 
 <template>
@@ -71,7 +73,7 @@
         padding-left: 25%;
         padding-right: 25%;
         grid-template-columns: repeat(3, 1fr);
-        gap: 48px;
+        gap: 24px;
     }
 
     #see-more {
