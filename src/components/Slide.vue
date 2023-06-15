@@ -1,9 +1,9 @@
 <template>
     <div id="container">
         <div id="slide-data">
-            <h1 id="slide-title" ref="title">UP: Blogs</h1>
-            <h3 id="slide-description" ref="description">Explore stories through my blogs!</h3>
-            <button id="slide-button" @click="$router.push('/blogs')">Explore now</button>
+            <h1 id="slide-title" ref="title">{{ $t("slide-title") }}</h1>
+            <h3 id="slide-description" ref="description">{{ $t("slide-description") }}</h3>
+            <button id="slide-button" @click="$router.push('/blogs')">{{ $t("slide-button") }}</button>
         </div>
     </div>
 </template>

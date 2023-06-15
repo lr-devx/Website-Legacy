@@ -17,15 +17,15 @@
             </h3>
         </div>
         <div id="project-container">
-            <h1 id="projects-title">Projects</h1>
+            <h1 id="projects-title">{{ $t("projects") }}</h1>
             <div id="project-cards">
-                <ProjectCard v-for="project in Projects" :name="project.name" :icon="project.icon" :banner="project.banner" :description="project.description"/> 
+                <ProjectCard v-for="project in Projects" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/> 
             </div>
-            <button id="see-more" @click="$router.push('/projects')">See more</button>
+            <button id="see-more" @click="$router.push('/projects')">{{ $t("see-more") }}</button>
         </div>
         <div id="pricing-container">
-            <h1 id="pricing-title">Ready for your next project to become ALIVE?</h1>
-            <button id="pricing-button"  @click="$router.push('/pricing')">Check out plans</button>
+            <h1 id="pricing-title">{{ $t("pricing-title") }}</h1>
+            <button id="pricing-button"  @click="$router.push('/pricing')">{{ $t("check-plans") }}</button>
         </div>
     </div>
 </template>
