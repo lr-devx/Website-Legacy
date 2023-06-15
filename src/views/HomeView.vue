@@ -1,5 +1,5 @@
 <script setup>
-    import Slider from "../components/Slider.vue";
+    import Slider from "../components/Slide.vue";
     import ProjectCard from "../components/ProjectCard.vue";
     import Projects from "../assets/projects_home.json";
 </script>
@@ -21,6 +21,11 @@
             <div id="project-cards">
                 <ProjectCard v-for="project in Projects" :name="project.name" :icon="project.icon" :banner="project.banner" :description="project.description"/> 
             </div>
+            <button id="see-more" @click="$router.push('/projects')">See more</button>
+        </div>
+        <div id="pricing-container">
+            <h1 id="pricing-title">Ready for your next project to become ALIVE?</h1>
+            <button id="pricing-button"  @click="$router.push('/pricing')">Check out plans</button>
         </div>
     </div>
 </template>
@@ -67,6 +72,44 @@
         padding-right: 25%;
         grid-template-columns: repeat(3, 1fr);
         gap: 48px;
+    }
+
+    #see-more {
+        margin-top: 32px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 128px;
+        height: 40px;
+        border: 0;
+    }
+    
+    #see-more:hover {
+        background-color: red;
+    }
+
+    #pricing-container {
+        padding-bottom: 32px;
+        background-color: blueviolet;
+    }
+
+    #pricing-title {
+        text-align: center;
+        padding: 32px;
+        color: white;
+    }
+
+    #pricing-button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 128px;
+        height: 40px;
+        border: 0;
+    }
+
+    #pricing-button:hover {
+        background-color: red;
     }
 
     @media (max-width: 1060px) {

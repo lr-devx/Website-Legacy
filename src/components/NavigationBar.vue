@@ -1,35 +1,44 @@
 <script setup>
     import navItems from "../assets/navbar.json";
-    import { ref } from "vue"
+    import { ref } from "vue";
 
     const isNavbarShown = ref(false);
-    window.addEventListener('resize', function(e) {
-        if (window.innerWidth > 600 && isNavbarShown.value)
+    const navBarButton = ref(null);
+
+    window.addEventListener("pagehide", function() {
+        isNavbarShown.value = false;
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 720 && isNavbarShown.value)
             isNavbarShown.value = false;
     });
+
+    const navigation = ref(null);
+    const backButton = ref(null);
 
     window.addEventListener("scroll", () => {
         if (window.innerWidth < 720) {
             return;
         }
         
-        var backButton = document.getElementById("back-to-top");
         var footer = document.getElementsByClassName("footer")[0];
 
         var content = document.documentElement;
-        if (content.scrollTop > 80) {
-            backButton.style.display = "block";
+        var currentScroll = window.innerHeight + content.scrollTop;
+        var scroll = content.scrollHeight;
+        var baseBottom = 10;
+
+        if (content.scrollTop > navigation.value.clientHeight) {
+            backButton.value.style.display = "block";
         } else {
-            backButton.style.display = "none";
+            backButton.value.style.display = "none";
         }
 
-        var currentEndAxis = window.innerHeight + content.scrollTop;
-        var endAxis = content.scrollHeight;
-         
-        if (currentEndAxis > endAxis-footer.clientHeight) {
-            backButton.style.bottom = `${footer.clientHeight - (endAxis-currentEndAxis) +10}px`;
+        if (currentScroll > scroll - footer.clientHeight) {
+            backButton.value.style.bottom = `${footer.clientHeight - (scroll - currentScroll) + baseBottom}px`;
         } else {
-            backButton.style.bottom = "10px";
+            backButton.value.style.bottom = `${baseBottom}px`;
         }
     });
 
@@ -39,17 +48,15 @@
 </script>
 
 <template>
-    <div id="container">
-        <h1 id="main-title">Alian/DEAD</h1>
-        <div id="navbar">
-            <ul id="navbar-items">
-                <li v-for="item in navItems" :key="item.name">
-                    <a :href="item.path">{{ $t(item.name) }}</a>
-                </li>
-                <button id="shiny-button" @click="$router.push('/pricing')">{{ $t("pricing") }}</button>
-            </ul>
-            <input id="navbar-switcher" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
-        </div>
+    <div id="navbar" ref="navigation">
+        <a id="main-title" href="/">Alian/DEAD</a>
+        <ul id="navbar-items">
+            <li v-for="item in navItems" :key="item.name">
+                <a :href="item.path">{{ $t(item.name) }}</a>
+            </li>
+            <button id="shiny-button" @click="$router.push('/pricing')">{{ $t("pricing") }}</button>
+        </ul>
+        <input id="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
     </div>
     <label id="navbar-menu" v-if="isNavbarShown">
         <li v-for="item in navItems" :key="item.name">
@@ -59,37 +66,34 @@
             <a href="/pricing">{{ $t("pricing") }}</a>
         </li>
     </label>
-    <button id="back-to-top" @click="backToTop">Back to top</button>
+    <button id="back-to-top" ref="backButton" @click="backToTop">Back to top</button>
 </template>
 
 <style scoped>
-    #container {
-        height: 5rem;
-        max-width: 1920px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        background-color: red;
-    }
-
     #main-title {
-        padding-left: 33px;
+        font-size: 32px;
+        font-weight: Bold;
+        margin-left: 33px;
+        color: black;
+        text-decoration: none;
     }
 
     #navbar {
         height: 5rem;
-        width: 100%;
-        display: flex;
+        max-width: 1920px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        justify-content: flex-end;
         background-color: orangered;
     }
 
     #navbar-items {
         list-style: none;
-        margin: 2rem;
+        margin-right: 2rem;
         display: flex;
         align-items: center;
+        justify-self: flex-end;
     }
 
     #navbar-items li {
@@ -159,6 +163,7 @@
 
         #navbar-switcher {
             display: block;
+            justify-self: flex-end;
         }
     }
 </style>
