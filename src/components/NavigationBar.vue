@@ -1,13 +1,11 @@
 <script setup>
-    import { useRoute, RouterLink } from "vue-router";
     import navItems from "../assets/navbar.json";
-    import { watch, ref } from "vue";
+    import { ref } from "vue";
 
     const isNavbarShown = ref(false);
     const navBarButton = ref(null);
 
-    const route = useRoute();
-    watch(() => route.fullPath, () => {
+    window.addEventListener("pagehide", function() {
         isNavbarShown.value = false;
     });
 
@@ -51,23 +49,21 @@
 
 <template>
     <div id="navbar" ref="navigation">
-        <RouterLink id="main-title" to="/">Alian/DEAD</RouterLink>
+        <a id="main-title" href="/">Alian/DEAD</a>
         <ul id="navbar-items">
-            <li v-for="item in navItems" id="item-normal" :key="item.name">
-                <RouterLink :to="item.path">{{ $t(item.name) }}</RouterLink>
+            <li v-for="item in navItems" :key="item.name">
+                <a :href="item.path">{{ $t(item.name) }}</a>
             </li>
-            <RouterLink to="/pricing">
-                <li id="shiny-button">{{ $t("pricing") }}</li>
-            </RouterLink>
+            <button id="shiny-button" @click="$router.push('/pricing')">{{ $t("pricing") }}</button>
         </ul>
         <input id="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
     </div>
     <label id="navbar-menu" v-if="isNavbarShown">
         <li v-for="item in navItems" :key="item.name">
-            <RouterLink :to="item.path">{{ $t(item.name) }}</RouterLink>
+            <a :href="item.path">{{ $t(item.name) }}</a>
         </li>
         <li id="shiny-item">
-            <RouterLink to="/pricing">{{ $t("pricing") }}</RouterLink>
+            <a href="/pricing">{{ $t("pricing") }}</a>
         </li>
     </label>
     <button id="back-to-top" ref="backButton" @click="backToTop">Back to top</button>
@@ -98,7 +94,7 @@
         justify-self: flex-end;
     }
 
-    #item-normal {
+    #navbar-items li {
         margin-right: 1rem;
     }
 
@@ -106,27 +102,14 @@
         text-decoration: none;
     }
 
-    
-    #navbar-items a:hover {
-        color: black;
-    }
-
     #shiny-button {
-        background-color: #f0f0f0;
-        font-size: 13.5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin-left: 0.5rem;
-        margin-right: 0rem;
-        width: 8.5rem;
-        height: 2.5rem;
+        width: 9rem;
+        height: 3rem;
         border: 0;
     }
 
     #shiny-button:hover {
-        cursor: default;
-        user-select: none;
         background-color: red;
     }
 
