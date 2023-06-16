@@ -1,10 +1,7 @@
 <script setup>
     import Slider from "../components/Slide.vue";
     import ProjectCard from "../components/ProjectCard.vue";
-    import Projects from "../assets/projects_home.json";
-
-    if (Projects.length > 6)
-        Projects.length = 6;
+    import Projects from "../assets/projects.json";
 
     document.title = "Alian/DEAD - Home";
 </script>
@@ -23,7 +20,7 @@
         <div id="project-container">
             <h1 id="projects-title">{{ $t("projects") }}</h1>
             <div id="project-cards">
-                <ProjectCard v-for="project in Projects" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/> 
+                <ProjectCard v-for="project in Projects.slice(0, 6)" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/> 
             </div>
             <button id="see-more" @click="$router.push('/projects')">{{ $t("see-more") }}</button>
         </div>

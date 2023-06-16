@@ -1,7 +1,9 @@
 <script setup>
     import ProjectCard from "../components/ProjectCard.vue";
-    import Projects from "../assets/projects_home.json";
+    import Projects from "../assets/projects.json";
     import { onMounted, ref } from "vue";
+
+    console.log(Projects);
 
     const container = ref(null);
 
