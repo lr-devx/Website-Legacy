@@ -3,6 +3,9 @@
     import ProjectCard from "../components/ProjectCard.vue";
     import Projects from "../assets/projects_home.json";
 
+    if (Projects.length > 6)
+        Projects.length = 6;
+
     document.title = "Alian/DEAD - Home";
 </script>
 

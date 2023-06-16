@@ -1,14 +1,8 @@
 [
     {
-        "id": "blog1",
-        "title": "Title",
-        "description": "Description",
-        "tags": ["Tag"]
-    },
-    {
-        "id": "blog2",
-        "title": "Title",
-        "description": "Description",
-        "tags": ["Tag"]
+        "id": "renote",
+        "title": "ReNote",
+        "description": "A timetable software",
+        "tags": ["School","C#","Productivity"]
     }
 ]

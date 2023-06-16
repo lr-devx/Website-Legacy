@@ -14,7 +14,7 @@
     <div id="container" ref="container">
         <h1 id="main-title">Published blogs</h1>
         <div id="blogs-list">
-            <a v-for="blog in Blogs" id="blog-item" :href="`/blogs/${blog.id}`">
+            <RouterLink v-for="blog in Blogs" id="blog-item" :to="`/blogs/${blog.id}`">
                 <div id="blog-item-content">
                     <h1 id="blog-item-title">{{ blog.title }}</h1>
                     <h3 id="blog-item-description">{{ blog.description }}</h3>
@@ -22,7 +22,7 @@
                         <h4 v-for="tag in blog.tags">{{ tag }}</h4>
                     </div>
                 </div>
-            </a>
+            </RouterLink>
             <div id="no-blogs-container" v-if="Blogs.length == 0">
                 <p>No blogs available yet...</p>
                 <p>Check back later!</p>
