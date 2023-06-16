@@ -33,13 +33,11 @@
 
 <style scoped>
     #container {
-        max-width: 1920px;
-        margin: auto;
         background-color: burlywood;
     }
 
     #main-title {
-        padding: 24px;
+        padding: 1.5rem;
         text-align: center;
         color: white;
     }
@@ -49,9 +47,9 @@
         justify-content: center;
         padding-left: 25%;
         padding-right: 25%;
-        padding-bottom: 32px;
+        padding-bottom: 2rem;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 1rem;
     }
 
     #blog-item {
@@ -60,13 +58,13 @@
     }
 
     #blog-item-content {
-        height: 128px;
+        height: 8rem;
         background-color: deeppink;
     }
 
     #blog-item-title {
-        padding-top: 16px;
-        padding-left: 16px;
+        padding-top: 1rem;
+        padding-left: 1rem;
         color: white;
         white-space: nowrap;
         overflow: hidden;
@@ -74,8 +72,8 @@
     }
 
     #blog-item-description {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         color: lightgray;
         overflow: hidden;
         white-space: nowrap;
@@ -84,14 +82,14 @@
 
     #blog-item-tags {
         display: flex;
-        padding-top: 8px;
-        padding-left: 16px;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
     }
 
     #blog-item-tags h4 {
         width: max-content;
-        padding: 4px;
-        margin-right: 8px;
+        padding: 0.25rem;
+        margin-right: 0.5rem;
         color: white;
         background-color: darkblue;
     }
@@ -99,11 +97,11 @@
     #no-blogs-container {
         color: black;
         text-align: center;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: 600;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 64rem) {
         #blog-item {
             max-width: 95vw;
         }

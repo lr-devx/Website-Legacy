@@ -12,8 +12,6 @@
     #container {
         width: 100%;
         height: 36rem;
-        max-width: 1920px;
-        margin: auto;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -28,7 +26,7 @@
     #slide-title {
         text-align: center;
         color: white;
-        font-size: 48px;
+        font-size: 3rem;
         transition: opacity 0.5s ease;
     }
 
@@ -36,9 +34,9 @@
         text-align: center;
         color: lightgray;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 1.5rem;
         word-wrap: break-word;
-        margin-top: 2vh;
+        margin-top: 1rem;
         transition: opacity 0.5s ease;
     }
 
@@ -47,7 +45,7 @@
         height: 3rem;
         border: 0;
         background-color: white;
-        margin-top: 2.5vh;
+        margin-top: 2rem;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -57,7 +55,7 @@
         background-color: red;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 45rem) {
         #slider-data {
             max-width: 75%;
         }

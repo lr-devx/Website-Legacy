@@ -27,8 +27,8 @@
 <style scoped>
     #container {
         background-color: gold;
-        width: 320px;
-        padding-bottom: 16px;
+        width: 20rem;
+        padding-bottom: 1rem;
         height: auto;
         margin: auto;
     }
@@ -39,16 +39,16 @@
 
     #banner {
         width: 100%;
-        height: 128px;
+        height: 8rem;
     }
 
     #icon-ghost {
         position: absolute;
         background-color: gold;
-        width: 128px;
-        height: 128px;
-        margin: 24px;
-        border-radius: 64px;
+        width: 8rem;
+        height: 8rem;
+        margin: 1.5rem;
+        border-radius: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -56,19 +56,19 @@
 
     #icon {
         position: absolute;
-        width: 112px;
-        height: 112px;
-        border-radius: 64px;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 4rem;
     }
 
     #name {
-        margin-top: 24px;
-        margin-left: 24px;
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
     }
 
     #description {
         word-wrap: break-word;
-        margin-left: 24px;
-        margin-right: 24px;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
     }
 </style>

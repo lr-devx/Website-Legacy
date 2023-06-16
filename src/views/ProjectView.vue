@@ -1,3 +1,7 @@
+<script setup>
+    document.title = "Alian/DEAD - Projects";
+</script>
+
 <template>
     <h1>Projects</h1>
 </template>

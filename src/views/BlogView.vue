@@ -1,5 +1,7 @@
 <script setup>
     import MarkdownView from '../components/MarkdownViewer.vue';
+    
+    document.title = `Alian/DEAD - Blogs`;
 </script>
 
 <template>

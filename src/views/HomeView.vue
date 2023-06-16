@@ -8,15 +8,14 @@
 
 <template>
     <Slider/>
-    <div id="container">
-        <div id="description-container">
-            <h1 id="description-title">{{ $t("whoami") }}</h1>
-            <h3 id="description-text">
-                <p>{{ $t("whoami-description-1") }}</p>
-                <p>{{ $t("whoami-description-2") }}</p>
-                <br>
-                <p>{{ $t("whoami-description-3") }}</p>
-            </h3>
+    <div id="description-container">
+        <h1 id="description-title">{{ $t("whoami") }}</h1>
+        <h3 id="description-text">
+            <p>{{ $t("whoami-description-1") }}</p>
+            <p>{{ $t("whoami-description-2") }}</p>
+            <br>
+            <p>{{ $t("whoami-description-3") }}</p>
+        </h3>
         </div>
         <div id="project-container">
             <h1 id="projects-title">{{ $t("projects") }}</h1>
@@ -29,23 +28,17 @@
             <h1 id="pricing-title">{{ $t("pricing-title") }}</h1>
             <button id="pricing-button"  @click="$router.push('/pricing')">{{ $t("check-plans") }}</button>
         </div>
-    </div>
 </template>
 
 <style scoped>
-    #container {
-        max-width: 1920px;
-        margin: auto;
-    }
-
     #description-container {
-        padding: 16px;
+        padding: 1rem;
         background-color: saddlebrown;
     }
 
     #description-title {
         color: white;
-        padding-bottom: 16px;
+        padding-bottom: 1rem;
         text-align: center;
     }
 
@@ -57,32 +50,32 @@
 
     #project-container {
         height: auto;
-        padding-bottom: 32px;
+        padding-bottom: 2rem;
         background-color: indianred;
     }
 
     #projects-title {
         color: white;
-        padding: 32px;
+        padding: 2rem;
         text-align: center;
     }
 
     #project-cards {
         display: grid;
         justify-content: center;
-        padding-left: 25%;
-        padding-right: 25%;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        padding-left: 50%;
+        padding-right: 50%;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5rem;
     }
 
     #see-more {
-        margin-top: 32px;
+        margin-top: 2rem;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 128px;
-        height: 40px;
+        width: 9rem;
+        height: 2.5rem;
         border: 0;
     }
     
@@ -91,13 +84,13 @@
     }
 
     #pricing-container {
-        padding-bottom: 32px;
+        padding-bottom: 2rem;
         background-color: blueviolet;
     }
 
     #pricing-title {
         text-align: center;
-        padding: 32px;
+        padding: 2rem;
         color: white;
     }
 
@@ -105,8 +98,8 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 128px;
-        height: 40px;
+        width: 12rem;
+        height: 3rem;
         border: 0;
     }
 
@@ -114,13 +107,13 @@
         background-color: red;
     }
 
-    @media (max-width: 1060px) {
+    @media (max-width: 66rem) {
         #project-cards {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
         }
     }
 
-    @media (max-width: 690px) {
+    @media (max-width: 43rem) {
         #project-cards {
             grid-template-columns: 1fr;
         }

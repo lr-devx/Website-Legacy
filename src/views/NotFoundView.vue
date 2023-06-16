@@ -20,8 +20,6 @@
 
 <style scoped>
     #container {
-        max-width: 1920px;
-        margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -33,17 +31,17 @@
     }
 
     h2 {
-        font-size: 48px;
+        font-size: 3rem;
         color: white;
     }
 
     h5 {
         
-        font-size: 32px;
+        font-size: 2rem;
         color: lightgray;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 45rem) {
         h2 {
             font-size: xx-large;
         }
@@ -53,7 +51,7 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 30rem) {
         h2 {
             font-size: large;
         }

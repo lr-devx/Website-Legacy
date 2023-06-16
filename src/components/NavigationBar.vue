@@ -18,7 +18,7 @@
     const backButton = ref(null);
 
     window.addEventListener("scroll", () => {
-        if (window.innerWidth < 720) {
+        if (window.innerWidth < 720 || navigation.value == null) {
             return;
         }
         
@@ -27,7 +27,7 @@
         var content = document.documentElement;
         var currentScroll = window.innerHeight + content.scrollTop;
         var scroll = content.scrollHeight;
-        var baseBottom = 10;
+        var baseBottom = 16;
 
         if (content.scrollTop > navigation.value.clientHeight) {
             backButton.value.style.display = "block";
@@ -71,19 +71,17 @@
 
 <style scoped>
     #main-title {
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: Bold;
-        margin-left: 33px;
+        margin-left: 2rem;
         color: black;
         text-decoration: none;
     }
 
     #navbar {
         height: 5rem;
-        max-width: 1920px;
-        margin: auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         align-items: center;
         background-color: orangered;
     }
@@ -97,7 +95,7 @@
     }
 
     #navbar-items li {
-        margin-right: 10px;
+        margin-right: 1rem;
     }
 
     #navbar-items a {
@@ -105,9 +103,9 @@
     }
 
     #shiny-button {
-        margin-left: 12px;
-        width: 128px;
-        height: 40px;
+        margin-left: 0.5rem;
+        width: 9rem;
+        height: 3rem;
         border: 0;
     }
 
@@ -116,9 +114,9 @@
     }
 
     #navbar-switcher {
-        width: 48px;
-        height: 48px;
-        margin-right: 24px;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.5rem;
         display: none;
     }
 
@@ -135,7 +133,7 @@
     #navbar-menu a {
         text-decoration: none;
         width: 100%;
-        height: 48px;
+        height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -143,16 +141,16 @@
     }
 
     #back-to-top {
-        width: 128px;
-        height: 32px;
+        width: 8rem;
+        height: 2rem;
         position: fixed;
         display: none;
-        bottom: 10px;
-        right: 10px;
+        bottom: 1rem;
+        right: 1rem;
         border: 0;
     }
 
-    @media (max-width: 720px) { 
+    @media (max-width: 45rem) { 
         #navbar-items {
             display: none;
         }

@@ -38,20 +38,17 @@
 
 <style scoped>
     #container {
-        max-width: 1920px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        margin-left: auto;
-        margin-right: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
         background-color: darkcyan;
     }
 
     #language-switch {
-        width: 100px;
-        height: 32px;
+        width: 8rem;
+        height: 2rem;
         border: 0;
         appearance: none;
         text-align: center;
@@ -77,10 +74,10 @@
 
     #external-items a {
         text-decoration: none;
-        margin-right: 12px;
+        margin-right: 1rem;
         font-size: 2rem;
-        width: 32px;
-        height: 32px;
+        width: 2rem;
+        height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -94,11 +91,11 @@
         color: white;
     }
 
-    @media (max-width: 1060px) {
+    @media (max-width: 66rem) {
         #container {
             display: block;
-            padding-top: 12px;
-            padding-bottom: 12px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         #language-switch {
@@ -108,12 +105,12 @@
         }
 
         #copyright {
-            padding: 12px;
+            padding: 1rem;
             text-align: center;
         }
 
         #external-items {
-            margin-bottom: 12px;
+            margin-bottom: 1rem;
             display: flex;
             justify-content: center;
         }
