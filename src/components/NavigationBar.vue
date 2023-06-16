@@ -99,10 +99,12 @@
     }
 
     #item-normal {
+        width: max-content;
         margin-right: 1rem;
     }
 
     #navbar-items a {
+        min-width: 100px;
         text-decoration: none;
     }
 
@@ -117,8 +119,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 0.5rem;
-        margin-right: 0rem;
         width: 8.5rem;
         height: 2.5rem;
         border: 0;
@@ -139,12 +139,9 @@
 
     #navbar-menu {
         width: 100%;
-        background-color: aquamarine;
-    }
-
-    #navbar-menu {
         position: absolute;
         list-style: none;
+        z-index: 9;
     }
 
     #navbar-menu a {

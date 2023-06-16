@@ -3,7 +3,8 @@
         name: String,
         icon: String,
         banner: String,
-        description: String
+        description: String,
+        showDownload: String
     });
 
     function getImageSrc(type, name) {
@@ -21,14 +22,15 @@
         </div>
         <h1 id="name">{{ name }}</h1>
         <h3 id="description">{{ description }}</h3>
+        <button id="view-details" v-if="showDownload == 'true'">View details</button>
     </div>
 </template>
 
 <style scoped>
     #container {
         background-color: gold;
-        width: 20rem;
         padding-bottom: 1rem;
+        width: 20rem;
         height: auto;
         margin: auto;
     }
@@ -70,5 +72,19 @@
         word-wrap: break-word;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+    }
+
+    #view-details {
+        width: 95%;
+        border: 0;
+        padding: 8px;
+        display: block;
+        margin-top: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #view-details:hover {
+        background-color: red;
     }
 </style>

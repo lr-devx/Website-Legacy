@@ -41,6 +41,7 @@
 
     #description-title {
         color: white;
+        word-wrap: break-word;
         padding-bottom: 1rem;
         text-align: center;
     }
@@ -60,6 +61,7 @@
     #projects-title {
         color: white;
         padding: 2rem;
+        word-wrap: break-word;
         text-align: center;
     }
 
@@ -92,6 +94,7 @@
     }
 
     #pricing-title {
+        word-wrap: break-word;
         text-align: center;
         padding: 2rem;
         color: white;

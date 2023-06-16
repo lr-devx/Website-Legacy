@@ -61,6 +61,7 @@
 
     #copyright {
         font-size: fit-content;
+        word-wrap: break-word;
         margin-left: auto;
         margin-right: auto;
         color: white;
