@@ -1,9 +1,7 @@
-<script setup>
-    document.title = "Alian/DEAD - Pricing";
-</script>
-
 <template>
-    <h1>Pricing</h1>
+    <div id="container">
+        <h1>Pricing</h1>
+    </div>
 </template>
 
 <style scoped>

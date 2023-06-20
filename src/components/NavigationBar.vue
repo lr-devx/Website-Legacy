@@ -2,11 +2,14 @@
     import { useRoute, RouterLink } from "vue-router";
     import navItems from "../assets/navbar.json";
     import { watch, ref } from "vue";
+    
+    const route = useRoute();
 
     const isNavbarShown = ref(false);
     const navBarButton = ref(null);
+    const navigation = ref(null);
+    const backButton = ref(null);
 
-    const route = useRoute();
     watch(() => route.fullPath, () => {
         isNavbarShown.value = false;
     });
@@ -16,15 +19,13 @@
             isNavbarShown.value = false;
     });
 
-    const navigation = ref(null);
-    const backButton = ref(null);
-
     window.addEventListener("scroll", () => {
         if (window.innerWidth < 720 || navigation.value == null) {
+            backButton.value.style.display = "none";
             return;
         }
         
-        var footer = document.getElementsByClassName("footer")[0];
+        var footer = document.getElementById("footer");
 
         var content = document.documentElement;
         var currentScroll = window.innerHeight + content.scrollTop;
@@ -51,37 +52,29 @@
 
 <template>
     <div id="navbar" ref="navigation">
-        <RouterLink id="main-title" to="/">Alian/DEAD</RouterLink>
-        <ul id="navbar-items">
-            <li v-for="item in navItems" id="item-normal" :key="item.name">
+        <RouterLink class="main-title" to="/">Alian/DEAD</RouterLink>
+        <ul class="navbar-items">
+            <li v-for="item in navItems" class="normal-link" :key="item.name">
                 <RouterLink :to="item.path">{{ $t(item.name) }}</RouterLink>
             </li>
             <RouterLink to="/pricing">
-                <li id="shiny-button">{{ $t("pricing") }}</li>
+                <li class="shiny-link">{{ $t("pricing") }}</li>
             </RouterLink>
         </ul>
-        <input id="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
+        <input class="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
     </div>
-    <label id="navbar-menu" v-if="isNavbarShown">
+    <label class="navbar-menu" v-if="isNavbarShown">
         <li v-for="item in navItems" :key="item.name">
             <RouterLink :to="item.path">{{ $t(item.name) }}</RouterLink>
         </li>
-        <li id="shiny-item">
+        <li class="shiny-item">
             <RouterLink to="/pricing">{{ $t("pricing") }}</RouterLink>
         </li>
     </label>
-    <button id="back-to-top" ref="backButton" @click="backToTop">Back to top</button>
+    <button class="back-to-top" ref="backButton" @click="backToTop">{{ $t("back-to-top") }}</button>
 </template>
 
 <style scoped>
-    #main-title {
-        font-size: 2rem;
-        font-weight: Bold;
-        margin-left: 2rem;
-        color: black;
-        text-decoration: none;
-    }
-
     #navbar {
         height: 5rem;
         display: grid;
@@ -90,7 +83,15 @@
         background-color: orangered;
     }
 
-    #navbar-items {
+    .main-title {
+        font-size: 2rem;
+        font-weight: Bold;
+        margin-left: 2rem;
+        color: black;
+        text-decoration: none;
+    }
+
+    .navbar-items {
         list-style: none;
         margin-right: 2rem;
         display: flex;
@@ -98,22 +99,23 @@
         justify-self: flex-end;
     }
 
-    #item-normal {
+    .normal-link {
         width: max-content;
         margin-right: 1rem;
     }
 
-    #navbar-items a {
+    .navbar-items a {
         min-width: 100px;
         text-decoration: none;
     }
 
     
-    #navbar-items a:hover {
+    .navbar-items a:hover {
         color: black;
     }
 
-    #shiny-button {
+    .shiny-link {
+        color: black;
         background-color: #f0f0f0;
         font-size: 13.5px;
         display: flex;
@@ -124,27 +126,27 @@
         border: 0;
     }
 
-    #shiny-button:hover {
+    .shiny-link:hover {
         cursor: default;
         user-select: none;
         background-color: red;
     }
 
-    #navbar-switcher {
+    .navbar-switcher {
         width: 3rem;
         height: 3rem;
         margin-right: 1.5rem;
         display: none;
     }
 
-    #navbar-menu {
+    .navbar-menu {
         width: 100%;
         position: absolute;
         list-style: none;
         z-index: 9;
     }
 
-    #navbar-menu a {
+    .navbar-menu a {
         text-decoration: none;
         width: 100%;
         height: 3rem;
@@ -154,7 +156,7 @@
         background-color: yellow;
     }
 
-    #back-to-top {
+    .back-to-top {
         width: 8rem;
         height: 2rem;
         position: fixed;
@@ -164,18 +166,22 @@
         border: 0;
     }
 
+    .back-to-top:hover {
+        background-color: red;
+    }
+
     @media (max-width: 45rem) { 
-        #navbar-items {
+        .navbar-items {
             display: none;
         }
 
-        #back-to-top {
-            display: none;
-        }
-
-        #navbar-switcher {
+        .navbar-switcher {
             display: block;
             justify-self: flex-end;
+        }
+
+        .back-to-top {
+            display: none;
         }
     }
 </style>

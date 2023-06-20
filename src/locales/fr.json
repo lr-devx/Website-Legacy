@@ -14,7 +14,15 @@
     "see-more": "Voir plus",
     "pricing-title": "Prêt pour votre prochain projet de devenir VIVANT?",
     "check-plans": "Voir les offres",
+    "back-to-top": "Revenir en haut",
     "copyright": "© 2023 Alian/DEAD. Tous Droits Réservés.",
     "not-found-title": "Hmm! Bizarre!",
-    "not-found-description": "On dirait que la page que vous cherchez n'existe pas."
+    "not-found-description": "On dirait que la page que vous cherchez n'existe pas.",
+    "published-blogs": "Blogs publiés",
+    "no-blogs-yet": "Il n'y a pas de blogs pour le moment...",
+    "no-blogs-check-later": "Revenez plus tard!",
+    "go-back": "Revenir en arrière",
+    "blog-not-found-title": "Attends une seconde...",
+    "blog-not-found-description": "Je crois que ce blog n'est pas disponible (╯°□°)╯︵ ┻━┻",
+    "view-details": "Voir les détails"
 }

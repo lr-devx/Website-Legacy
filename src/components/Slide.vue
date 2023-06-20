@@ -1,15 +1,15 @@
 <template>
-    <div id="container">
-        <div id="slide-data">
-            <h1 id="slide-title" ref="title">{{ $t("slide-title") }}</h1>
-            <h3 id="slide-description" ref="description">{{ $t("slide-description") }}</h3>
-            <button id="slide-button" @click="$router.push('/blogs')">{{ $t("slide-button") }}</button>
+    <div id="slide">
+        <div class="slide-data">
+            <h1 class="slide-title">{{ $t("slide-title") }}</h1>
+            <h3 class="slide-description">{{ $t("slide-description") }}</h3>
+            <button class="slide-button" @click="$router.push('/blogs')">{{ $t("slide-button") }}</button>
         </div>
     </div>
 </template>
 
 <style scoped>
-    #container {
+    #slide {
         width: 100%;
         height: 36rem;
         overflow: hidden;
@@ -19,18 +19,18 @@
         background-color: blue;
     }
 
-    #slide-data {
+    .slide-data {
         max-width: 50%;
     }
 
-    #slide-title {
+    .slide-title {
         text-align: center;
         color: white;
         font-size: 3rem;
         transition: opacity 0.5s ease;
     }
 
-    #slide-description {
+    .slide-description {
         text-align: center;
         color: lightgray;
         font-weight: 600;
@@ -40,7 +40,7 @@
         transition: opacity 0.5s ease;
     }
 
-    #slide-button {
+    .slide-button {
         width: 12rem;
         height: 3rem;
         border: 0;
@@ -51,27 +51,13 @@
         margin-right: auto;
     }
 
-    #slide-button:hover {
+    .slide-button:hover {
         background-color: red;
     }
 
     @media (max-width: 45rem) {
-        #slider-data {
+        .slide-data {
             max-width: 75%;
-        }
-
-        #slider-next {
-            display: none;
-        }
-
-        #slider-previous {
-            display: none;
-        }
-
-        #slide-button {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 </style>

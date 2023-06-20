@@ -14,7 +14,15 @@
     "see-more": "See more",
     "pricing-title": "Ready for your next project to become ALIVE?",
     "check-plans": "Check out plans",
+    "back-to-top": "Back to top",
     "copyright": "© 2023 Alian/DEAD. All rights reserved.",
     "not-found-title": "This doesn't seem right",
-    "not-found-description": "Looks like the page you are looking for doesn't exist!"
+    "not-found-description": "Looks like the page you are looking for doesn't exist!",
+    "published-blogs": "Published blogs",
+    "no-blogs-yet": "No blogs available yet...",
+    "no-blogs-check-later": "Check back later!",
+    "go-back": "Go back",
+    "blog-not-found-title": "Hold on a second!",
+    "blog-not-found-description": "Looks like the blog you tried to view is not available :()",
+    "view-details": "View details"
 }

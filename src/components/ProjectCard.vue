@@ -13,21 +13,21 @@
 </script>
 
 <template>
-    <div id="container">
-        <div id="head-banner">
-            <img id="banner" :src="getImageSrc('banners', banner)"/>
-            <div id="icon-ghost">
-                <img id="icon" :src="getImageSrc('icons', icon)"/>
+    <div id="card">
+        <div class="head-banner">
+            <img :src="getImageSrc('banners', banner)"/>
+            <div class="icon-ghost">
+                <img class="icon" :src="getImageSrc('icons', icon)"/>
             </div>
         </div>
-        <h1 id="name">{{ name }}</h1>
-        <h3 id="description">{{ description }}</h3>
-        <button id="view-details" v-if="showDownload == 'true'">View details</button>
+        <h1 class="name">{{ name }}</h1>
+        <h3 class="description">{{ description }}</h3>
+        <button class="view-details" v-if="showDownload == 'true'">{{ $t("view-details") }}</button>
     </div>
 </template>
 
 <style scoped>
-    #container {
+    #card {
         background-color: gold;
         padding-bottom: 1rem;
         width: 20rem;
@@ -35,16 +35,11 @@
         margin: auto;
     }
 
-    #head-banner {
+    .head-banner {
         display: flex;
     }
 
-    #banner {
-        width: 100%;
-        height: 8rem;
-    }
-
-    #icon-ghost {
+    .icon-ghost {
         position: absolute;
         background-color: gold;
         width: 8rem;
@@ -56,25 +51,25 @@
         justify-content: center;
     }
 
-    #icon {
+    .icon {
         position: absolute;
         width: 7rem;
         height: 7rem;
         border-radius: 4rem;
     }
 
-    #name {
+    .name {
         margin-top: 1.5rem;
         margin-left: 1.5rem;
     }
 
-    #description {
+    .description {
         word-wrap: break-word;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
 
-    #view-details {
+    .view-details {
         width: 95%;
         border: 0;
         padding: 8px;
@@ -84,7 +79,7 @@
         margin-right: auto;
     }
 
-    #view-details:hover {
+    .view-details:hover {
         background-color: red;
     }
 </style>

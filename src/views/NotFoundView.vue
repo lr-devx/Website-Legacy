@@ -1,19 +1,8 @@
-<script setup>
-    import {onMounted, ref } from "vue";
-    const container = ref(null);
-
-    onMounted(() => {
-        container.value.style.minHeight = `${document.documentElement.clientHeight - (80 + 64)}px`;
-    });
-
-    document.title = "Alian/DEAD - Not Found";
-</script>
-
 <template>
-    <div id="container" ref="container">
-        <div id="text-container">
-            <h2>{{ $t("not-found-title") }}</h2>
-            <h5>{{ $t("not-found-description") }}</h5>
+    <div id="container">
+        <div class="text-container">
+            <h2 class="title">{{ $t("not-found-title") }}</h2>
+            <h5 class="description">{{ $t("not-found-description") }}</h5>
         </div>
     </div>
 </template>
@@ -26,37 +15,37 @@
         background-color: midnightblue;
     }
     
-    #text-container {
+    .text-container {
         text-align: center;
     }
 
-    h2 {
+    .title {
         font-size: 3rem;
         color: white;
     }
 
-    h5 {
+    .description {
         
         font-size: 2rem;
         color: lightgray;
     }
 
     @media (max-width: 45rem) {
-        h2 {
+        .title {
             font-size: xx-large;
         }
 
-        h5 {
+        .description {
             font-size: large;
         }
     }
 
     @media (max-width: 30rem) {
-        h2 {
+        .title {
             font-size: large;
         }
 
-        h5 {
+        .description {
             font-size: medium;
         }
     }

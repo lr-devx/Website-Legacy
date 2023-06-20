@@ -1,20 +1,12 @@
 <script setup>
     import Blogs from "../assets/blogs.json";
-    import { onMounted, ref } from "vue";
-    const container = ref(null);
-
-    onMounted(() => {
-        container.value.style.minHeight = `${document.documentElement.clientHeight - (80 + 64)}px`;
-    });
-
-    document.title = "Alian/DEAD - Blogs";
 </script>
 
 <template>
-    <div id="container" ref="container">
-        <h1 id="main-title">Published blogs</h1>
+    <div id="container">
+        <h1 id="main-title">{{ $t("published-blogs") }}</h1>
         <div id="blogs-list">
-            <RouterLink v-for="blog in Blogs" id="blog-item" :to="`/blogs/${blog.id}`">
+            <RouterLink v-for="blog in Blogs" id="blog-item" :to="{path: 'blogs/view', query: { id: blog.id }}">
                 <div id="blog-item-content">
                     <h1 id="blog-item-title">{{ blog.title }}</h1>
                     <h3 id="blog-item-description">{{ blog.description }}</h3>
@@ -24,8 +16,8 @@
                 </div>
             </RouterLink>
             <div id="no-blogs-container" v-if="Blogs.length == 0">
-                <p>No blogs available yet...</p>
-                <p>Check back later!</p>
+                <p>{{ $t("no-blogs-yet") }}</p>
+                <p>{{ $t("no-blogs-check-later") }}</p>
             </div>
         </div>
     </div>

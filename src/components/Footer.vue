@@ -15,14 +15,14 @@
 </script>
 
 <template>
-    <div id="container" class="footer">
-        <select id="language-switch" v-model="selectedLanguage" @change="changeLanguage">
+    <div id="footer">
+        <select class="language-switch" v-model="selectedLanguage" @change="changeLanguage">
             <option v-for="language in supportedLanguages" :value="language.code">
                 {{ language.name }}
             </option>
         </select>
-        <h3 id="copyright"> {{ $t("copyright") }}</h3>
-        <div id="external-items">
+        <h3 class="copyright"> {{ $t("copyright") }}</h3>
+        <div class="external-items">
             <a target="_blank" :href="links.youtube">
                 <i class="fa fa-youtube-play"></i>
             </a>
@@ -37,7 +37,7 @@
 </template>
 
 <style scoped>
-    #container {
+    #footer {
         padding-top: 1rem;
         padding-bottom: 1rem;
         display: grid;
@@ -46,7 +46,7 @@
         background-color: darkcyan;
     }
 
-    #language-switch {
+    .language-switch {
         width: 8rem;
         height: 2rem;
         border: 0;
@@ -55,11 +55,11 @@
         margin-left: 1rem;
     }
 
-    #language-switch option {
+    .language-switch option {
         border: 0;
     }
 
-    #copyright {
+    .copyright {
         font-size: fit-content;
         word-wrap: break-word;
         margin-left: auto;
@@ -67,13 +67,13 @@
         color: white;
     }
 
-    #external-items {
+    .external-items {
         margin-left: auto;
         display: flex;
         align-items: center;
     }
 
-    #external-items a {
+    .external-items a {
         text-decoration: none;
         margin-right: 1rem;
         font-size: 2rem;
@@ -84,33 +84,33 @@
         align-items: center;
     }
 
-    #external-items i {
+    .external-items i {
         color: black;
     }
 
-    #external-items i:hover {
+    .external-items i:hover {
         color: white;
     }
 
     @media (max-width: 66rem) {
-        #container {
+        #footer {
             display: block;
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
 
-        #language-switch {
+        .language-switch {
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
-        #copyright {
+        .copyright {
             padding: 1rem;
             text-align: center;
         }
 
-        #external-items {
+        .external-items {
             margin-bottom: 1rem;
             display: flex;
             justify-content: center;
