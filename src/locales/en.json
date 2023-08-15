@@ -1,9 +1,12 @@
 {
     "home": "Home",
     "blogs": "Blogs",
+    "blog-viewer": "Blog Viewer",
     "projects": "Projects",
+    "project-details": "Project Details",
     "about": "About",
     "pricing": "Pricing",
+    "not-found": "Not Found",
     "whoami": "Whoami?",
     "slide-title": "UP: Blogs",
     "slide-description": "Explore stories through my blogs!",

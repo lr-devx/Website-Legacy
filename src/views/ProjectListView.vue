@@ -6,7 +6,7 @@
 <template>
     <div id="container">
         <div class="projects-container">
-            <ProjectCard v-for="project in Projects" show-download="true" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/>
+            <ProjectCard v-for="project in Projects" show-download="true" :name="project.name" :project-id="project.id" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/>
         </div>
     </div>
 </template>
@@ -20,6 +20,7 @@
     }
 
     .projects-container {
+        margin: 24px 0px 24px 0px;
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(4, 1fr);

@@ -1,6 +1,9 @@
 <script setup>
+    import { RouterLink } from 'vue-router';
+
     defineProps({
         name: String,
+        projectId: String,
         icon: String,
         banner: String,
         description: String,
@@ -22,14 +25,15 @@
         </div>
         <h1 class="name">{{ name }}</h1>
         <h3 class="description">{{ description }}</h3>
-        <button class="view-details" v-if="showDownload == 'true'">{{ $t("view-details") }}</button>
+        <RouterLink class="view-details" v-if="showDownload == 'true'" :to="{path: 'projects/details', query: { id: projectId }}">
+            {{ $t("view-details") }}
+        </RouterLink>
     </div>
 </template>
 
 <style scoped>
     #card {
         background-color: gold;
-        padding-bottom: 1rem;
         width: 20rem;
         height: auto;
         margin: auto;
@@ -67,19 +71,23 @@
         word-wrap: break-word;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+        padding-bottom: 1rem;
     }
 
     .view-details {
-        width: 95%;
-        border: 0;
-        padding: 8px;
         display: block;
-        margin-top: 16px;
+        width: 90%;
+        padding: 0.5rem;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        text-align: center;
+        background-color: #f0f0f0;
     }
 
     .view-details:hover {
+        color: white;
         background-color: red;
     }
 </style>

@@ -1,8 +1,11 @@
 <script setup>
     import { useI18n } from "vue-i18n";
+    import { useRoute } from "vue-router";
     import { ref } from "vue"
     import supportedLanguages from "../assets/languages.json";
     import socialinks from "../assets/links.json";
+
+    const route = useRoute();
 
     const i18n = useI18n();
     const selectedLanguage = ref(i18n.locale.value);
@@ -10,6 +13,7 @@
 
     function changeLanguage(e) {
         i18n.locale.value = e.target.selectedOptions[0].value;
+        document.title = `Alian/DEAD - ${i18n.t(route.name)}`;
         localStorage.setItem("lang", i18n.locale.value);
     }
 </script>

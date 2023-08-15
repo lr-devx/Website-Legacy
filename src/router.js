@@ -3,37 +3,42 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
     {
         "path": "/",
-        "name": "Home",
+        "name": "home",
         "component": () => import("./views/HomeView.vue")
     },
     {
         "path": "/blogs",
-        "name": "Blogs",
+        "name": "blogs",
         "component": () => import("./views/BlogListView.vue")
     },
     {
         "path": "/blogs/view",
-        "name": "Blog Viewer",
+        "name": "blog-viewer",
         "component": () => import("./views/BlogView.vue")
     },
     {
         "path": "/projects",
-        "name": "Projects",
-        "component": () => import("./views/ProjectView.vue")
+        "name": "projects",
+        "component": () => import("./views/ProjectListView.vue")
+    },
+    {
+        "path": "/projects/details",
+        "name": "project-details",
+        "component": () => import("./views/ProjectDetails.vue")
     },
     {
         "path": "/pricing",
-        "name": "Pricing",
+        "name": "pricing",
         "component": () => import("./views/PricingView.vue")
     },
     {
         "path": "/about",
-        "name": "About",
+        "name": "about",
         "component": () => import("./views/AboutView.vue")
     },
     {
         "path": "/:catchAll(.*)",
-        "name": "Not Found",
+        "name": "not-found",
         "component": () => import("./views/NotFoundView.vue")
     }
 ]
