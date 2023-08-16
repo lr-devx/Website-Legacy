@@ -1,5 +1,5 @@
 <script setup>
-  import Navigation from "./components/NavigationBar.vue";
+  import Navigation from "./components/Navigation.vue";
   import FooterSection from "./components/Footer.vue";
   import { useRoute, RouterView } from "vue-router";
   import { useI18n } from "vue-i18n";

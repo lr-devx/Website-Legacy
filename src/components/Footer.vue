@@ -33,8 +33,8 @@
             <a target="_blank" :href="links.github">
                 <i class="fa fa-github"></i>
             </a>
-            <a target="_blank" :href="links.twitter">
-                <i class="fa fa-twitter"></i>
+            <a target="_blank" :href="links.instagram">
+                <i class="fa fa-instagram"></i>
             </a>
         </div>
     </div>
