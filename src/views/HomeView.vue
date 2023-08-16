@@ -16,7 +16,7 @@
             <p>{{ $t("whoami-description-3") }}</p>
         </h3>
         </div>
-        <div class="projects">
+        <div class="projects" v-if="Projects.length > 0">
             <h1 class="projects-title">{{ $t("projects") }}</h1>
             <div class="projects-cards">
                 <ProjectCard v-for="project in Projects.slice(0, 6)" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/> 
