@@ -10,8 +10,11 @@
   function onUpdated() {
     document.title = `Alian/DEAD - ${i18n.t(route.name)}`;
 
+    const extraHeight = 80 + 64; // navigation + footer
     const container = document.getElementById("container");
-    container.style.minHeight = `${document.documentElement.clientHeight - (80 + 64)}px`;
+    if (container.scrollHeight + extraHeight < document.documentElement.clientHeight) {
+      container.style.minHeight = `${document.documentElement.clientHeight - extraHeight}px`;
+    }
   }
 </script>
 

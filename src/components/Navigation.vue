@@ -20,6 +20,10 @@
     });
 
     window.addEventListener("scroll", () => {
+        if (backButton.value == null)  {
+            return;
+        }
+        
         if (window.innerWidth < 720 || navigation.value == null) {
             backButton.value.style.display = "none";
             return;

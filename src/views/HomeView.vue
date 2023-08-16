@@ -1,12 +1,12 @@
 <script setup>
-    import Slider from "../components/Slide.vue";
+    import Slide from "../components/Slide.vue";
     import ProjectCard from "../components/ProjectCard.vue";
     import Projects from "../assets/projects.json";
 </script>
 
 <template>
-    <Slider/>
     <div id="container">
+        <Slide/>
         <div class="description">
         <h1 class="description-title">{{ $t("whoami") }}</h1>
         <h3 class="description-text">
@@ -31,6 +31,10 @@
 </template>
 
 <style scoped>
+    #container {
+        background-color: wheat;
+    }
+
     .description {
         padding: 1rem;
         background-color: saddlebrown;

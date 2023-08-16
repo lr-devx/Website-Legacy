@@ -27,5 +27,7 @@
     "go-back": "Go back",
     "blog-not-found-title": "Hold on a second!",
     "blog-not-found-description": "Looks like the blog you tried to view is not available :()",
-    "view-details": "View details"
+    "view-details": "View details",
+    "no-projects-yet": "No projects available yet...",
+    "no-projects-check-later": "Check back later!"
 }
