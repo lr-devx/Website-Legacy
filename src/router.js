@@ -1,45 +1,54 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+import HomeView from "./views/HomeView.vue";
+import BlogListViewer from "./views/BlogListView.vue";
+import BlogView from "./views/BlogView.vue";
+import ProjectListView from "./views/ProjectListView.vue";
+import ProjectDetailsView from "./views/ProjectDetailsView.vue";
+import PricingView from "./views/PricingView.vue";
+import AboutView from "./views/AboutView.vue";
+import NotFoundView from "./views/NotFoundView.vue";
+
 const routes = [
     {
         "path": "/",
         "name": "home",
-        "component": () => import("./views/HomeView.vue")
+        "component": HomeView
     },
     {
         "path": "/blogs",
         "name": "blogs",
-        "component": () => import("./views/BlogListView.vue")
+        "component": BlogListViewer
     },
     {
         "path": "/blogs/view",
         "name": "blog-viewer",
-        "component": () => import("./views/BlogView.vue")
+        "component": BlogView
     },
     {
         "path": "/projects",
         "name": "projects",
-        "component": () => import("./views/ProjectListView.vue")
+        "component": ProjectListView
     },
     {
         "path": "/projects/details",
         "name": "project-details",
-        "component": () => import("./views/ProjectDetails.vue")
+        "component": ProjectDetailsView
     },
     {
         "path": "/pricing",
         "name": "pricing",
-        "component": () => import("./views/PricingView.vue")
+        "component": PricingView
     },
     {
         "path": "/about",
         "name": "about",
-        "component": () => import("./views/AboutView.vue")
+        "component": AboutView
     },
     {
         "path": "/:catchAll(.*)",
         "name": "not-found",
-        "component": () => import("./views/NotFoundView.vue")
+        "component": NotFoundView
     }
 ]
 

@@ -9,6 +9,7 @@
     const blog = ref({});
     const markdown = ref("");
     const blogExists = ref(false);
+    const hasInitialized = ref(false);
 
     for (var i = 0; i < Blogs.length; i++) {
         if (Blogs[i].id == route.query.id) {
@@ -20,9 +21,11 @@
     import(`../assets/blogs/${blog.value.id}.md`).then(module => {
             markdown.value = module.default || "";
             blogExists.value = true;
+            hasInitialized.value = true;
     }).catch(err => {
             console.warn(`Markdown source was not found (${route.query.id}.md)`);
             console.error(err);
+            hasInitialized.value = true;
     });
 
     const getMarkdownRender = computed(() => {
@@ -32,7 +35,7 @@
 
 <template>
     <div id="container">
-        <div v-if="blogExists" class="markdown">
+        <div v-if="blogExists && hasInitialized" class="markdown">
             <RouterLink to="/blogs" class="go-back">&LeftArrow; {{ $t("go-back") }}</RouterLink>
             <div>
                 <h1 class="meta-title">{{ blog.title }}</h1>
@@ -40,7 +43,7 @@
             </div>
             <div class="render" v-html="getMarkdownRender"></div>
         </div>
-        <div v-else class="not-found">
+        <div v-else-if="hasInitialized" class="not-found">
             <h1 class="not-found-title">{{ $t("blog-not-found-title") }}</h1>
             <h3 class="not-found-description">{{ $t("blog-not-found-description") }}</h3>
         </div>

@@ -6,11 +6,14 @@
     
     const project = ref({});
     const projectExists = ref(false);
+    const hasInitialized = ref(false);
 
     import(`../assets/projects/${route.query.id}.json`).then(module => {
             project.value = module.default || {};
             projectExists.value = true;
+            hasInitialized.value = true;
     }).catch(err => {
+            hasInitialized.value = true;
             console.warn(`Project details were not found (${route.query.id}.json)`);
             console.error(err);
     });
@@ -22,7 +25,7 @@
 
 <template>
     <div id="container">
-        <div class="project-details" v-if="projectExists">
+        <div class="project-details" v-if="projectExists && hasInitialized">
             <div class="head-banner">
                 <img class="banner" :src="getImageSrc('banners', project.banner)"/>
                 <div class="icon-ghost">
@@ -37,7 +40,7 @@
             </div>
             <button class="project-link-bottom">{{ project["link-title"] }}</button>
         </div>
-        <div v-else class="not-found">
+        <div v-else-if="hasInitialized" class="not-found">
             <h1 class="not-found-title">{{ $t("project-not-found-title") }}</h1>
             <h3 class="not-found-description">{{ $t("project-not-found-description") }}</h3>
         </div>
@@ -52,12 +55,12 @@
     }
 
     .project-details {
+        width: 100%;
         padding-bottom: 2rem;
     }
 
     .banner {
         height: 256px;
-        width: 100%;
     }
 
     .icon-ghost {
@@ -129,7 +132,7 @@
         font-size: 2rem;
     }
 
-    @media (max-width: 45rem) {
+    @media (max-width: 960px) {
         .head-banner {
             display: flex;
             justify-content: center;
@@ -157,7 +160,9 @@
         .project-link-bottom:hover {
             background-color: red;
         }
+    }
 
+    @media (max-width: 45rem) {
         .not-found-title {
             font-size: xx-large;
         }
