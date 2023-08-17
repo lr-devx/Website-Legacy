@@ -25,5 +25,7 @@
     "go-back": "Revenir en arrière",
     "blog-not-found-title": "Attends une seconde...",
     "blog-not-found-description": "Je crois que ce blog n'est pas disponible (╯°□°)╯︵ ┻━┻",
-    "view-details": "Voir les détails"
+    "view-details": "Voir les détails",
+    "no-projects-yet": "Il n'y a pas de projets pour le moment...",
+    "no-projects-check-later": "Revenez plus tard!"
 }

@@ -1,5 +1,9 @@
 <script setup>
+    import { ref } from "vue";
+    
     import Blogs from "../assets/blogs.json";
+
+    const isBlogListEmpty = ref(Blogs.length == 0);
 </script>
 
 <template>
@@ -15,7 +19,7 @@
                     </div>
                 </div>
             </RouterLink>
-            <div id="no-blogs-container" v-if="Blogs.length == 0">
+            <div id="no-blogs-container" v-if="isBlogListEmpty">
                 <p>{{ $t("no-blogs-yet") }}</p>
                 <p>{{ $t("no-blogs-check-later") }}</p>
             </div>

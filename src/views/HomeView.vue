@@ -1,7 +1,11 @@
 <script setup>
+    import { ref } from "vue";
+
     import Slide from "../components/Slide.vue";
     import ProjectCard from "../components/ProjectCard.vue";
     import Projects from "../assets/projects.json";
+
+    const isProjectListEmpty = ref(Projects.length == 0);
 </script>
 
 <template>
@@ -16,7 +20,7 @@
             <p>{{ $t("whoami-description-3") }}</p>
         </h3>
         </div>
-        <div class="projects" v-if="Projects.length > 0">
+        <div class="projects" v-if="!isProjectListEmpty">
             <h1 class="projects-title">{{ $t("projects") }}</h1>
             <div class="projects-cards">
                 <ProjectCard v-for="project in Projects.slice(0, 6)" :name="project.name" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/> 
