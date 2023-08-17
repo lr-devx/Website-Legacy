@@ -32,13 +32,13 @@
                     <img class="icon" :src="getImageSrc('icons', project.icon)"/>
                 </div>
             </div>
-            <button class="project-link-top">{{ project["link-title"] }}</button>
+            <a class="project-link-top" :href="project['link-url']">{{ project["link-title"] }}</a>
             <div class="main-content">
                 <h1 class="project-name">{{ project.name }}</h1>
                 <h2 class="project-desc">{{ project.desc }}</h2>
                 <h3 class="project-long-desc">{{ project["long-desc"] }}</h3>
             </div>
-            <button class="project-link-bottom">{{ project["link-title"] }}</button>
+            <a class="project-link-bottom" :href="project['link-url']">{{ project["link-title"] }}</a>
         </div>
         <div v-else-if="hasInitialized" class="not-found">
             <h1 class="not-found-title">{{ $t("project-not-found-title") }}</h1>
@@ -87,11 +87,15 @@
     }
 
     .project-link-top {
+        background-color: #f0f0f0;
+        color: black;
         float: right;
         margin: 32px;
+        padding-top: 12px;
+        padding-bottom: 12px;
         width: 192px;
-        height: 48px;
         text-align: center;
+        text-decoration: none;
         border: none;
     }
 
@@ -150,13 +154,18 @@
         }
 
         .project-link-bottom {
+            background-color: #f0f0f0;
+            color: black;
             display: block;
             margin-top: 16px;
             margin-left: auto;
             margin-right: auto;
             width: 192px;
-            height: 48px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-decoration: none;
             text-align: center;
+            align-self: center;
             border: none;
         }
 
