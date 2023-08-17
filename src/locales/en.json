@@ -31,5 +31,6 @@
     "no-projects-yet": "No projects available yet...",
     "no-projects-check-later": "Check back later!",
     "project-not-found-title": "Wait! It seems that...",
-    "project-not-found-description": "The project you tried to view is not available (╯°□°)╯︵ ┻━┻"
+    "project-not-found-description": "The project you tried to view is not available (╯°□°)╯︵ ┻━┻",
+    "loading": "Loading..."
 }

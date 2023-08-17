@@ -44,6 +44,9 @@
             <h1 class="not-found-title">{{ $t("project-not-found-title") }}</h1>
             <h3 class="not-found-description">{{ $t("project-not-found-description") }}</h3>
         </div>
+        <div v-else class="not-found">
+            <h1 class="not-found-title">{{ $t("loading") }}</h1>
+        </div>
     </div>
 </template>
 
