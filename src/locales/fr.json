@@ -28,5 +28,6 @@
     "view-details": "Voir les détails",
     "no-projects-yet": "Il n'y a pas de projets pour le moment...",
     "no-projects-check-later": "Revenez plus tard!",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "products-unavailable": "Rien à vendre pour le moment, revenez plus tard!"
 }

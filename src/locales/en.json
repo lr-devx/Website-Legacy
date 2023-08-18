@@ -32,5 +32,6 @@
     "no-projects-check-later": "Check back later!",
     "project-not-found-title": "Wait! It seems that...",
     "project-not-found-description": "The project you tried to view is not available (╯°□°)╯︵ ┻━┻",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "products-unavailable": "Nothing to sell for the time being, come back later!"
 }
