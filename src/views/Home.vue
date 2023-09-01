@@ -33,7 +33,7 @@
 <script setup>
     import { ref } from "vue";
     import Card from "@/components/Card.vue";
-    import Projects from "@/assets/projects/projects.json";
+    import Projects from "@/assets/projects.json";
 
     const isProjectListEmpty = ref(Projects.length == 0);
 </script>

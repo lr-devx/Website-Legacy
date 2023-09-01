@@ -1,9 +1,9 @@
 <template>
     <div id="card">
         <div class="head-banner">
-            <img :src="getImageSrc(banner)"/>
+            <img alt="banner" :src="getImageSrc(banner)"/>
             <div class="icon-ghost">
-                <img class="icon" :src="getImageSrc(icon)"/>
+                <img alt="icon" class="icon" :src="getImageSrc(icon)"/>
             </div>
         </div>
         <h1 class="name">{{ name }}</h1>
@@ -27,7 +27,7 @@
     });
 
     function getImageSrc(name) {
-        return new URL(`/src/assets/images/${name}`, import.meta.url);
+        return `/static/${name}`;
     }
 </script>
 

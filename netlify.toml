@@ -1,5 +1,6 @@
 ## Netlify Dev Environnement
 ## Used for single-page application
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

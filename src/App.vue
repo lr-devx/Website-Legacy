@@ -1,3 +1,9 @@
+<template>
+  <Navigation />
+  <RouterView @vue:updated="onUpdated" />
+  <Footer />
+</template>
+
 <script setup>
   import { useRoute, RouterView } from "vue-router";
   import { useI18n } from "vue-i18n";
@@ -7,6 +13,9 @@
 
   const route = useRoute();
   const i18n = useI18n();
+
+  document.querySelector("html")
+          .setAttribute("lang", i18n.locale.value);
 
   function onUpdated() {
     document.title = `Alian/DEAD - ${i18n.t(route.name)}`;
@@ -21,9 +30,3 @@
     }
   }
 </script>
-
-<template>
-  <Navigation />
-  <RouterView @vue:updated="onUpdated" />
-  <Footer />
-</template>

@@ -7,13 +7,13 @@
         </select>
         <h3 class="copyright"> {{ $t("copyright") }}</h3>
         <div class="external-items">
-            <a target="_blank" href="https://www.youtube.com/@aliandead">
+            <a target="_blank" title="YouTube" aria-label="YouTube" href="https://www.youtube.com/@aliandead">
                 <i class="fa fa-youtube-play"></i>
             </a>
-            <a target="_blank" href="https://github.com/aliandead">
+            <a target="_blank" title="GitHub" aria-label="GitHub" href="https://github.com/aliandead">
                 <i class="fa fa-github"></i>
             </a>
-            <a target="_blank" href="https://instagram.com/aliandead">
+            <a target="_blank" title="Instagram" aria-label="Instagram" href="https://instagram.com/aliandead">
                 <i class="fa fa-instagram"></i>
             </a>
         </div>
@@ -33,7 +33,11 @@
 
     function changeLanguage(e) {
         i18n.locale.value = e.target.selectedOptions[0].value;
+        
         document.title = `Alian/DEAD - ${i18n.t(route.name)}`;
+        document.querySelector("html")
+                .setAttribute("lang", i18n.locale.value);
+        
         localStorage.setItem("lang", i18n.locale.value);
     }
 </script>

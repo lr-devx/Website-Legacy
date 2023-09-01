@@ -22,7 +22,7 @@
     import { marked } from "marked";
     import { computed, ref } from "vue";
     import { useRoute } from "vue-router";
-    import Blogs from "@/assets/blogs/blogs.json";
+    import Blogs from "@/assets/blogs.json";
 
     const route = useRoute();
     

@@ -2,9 +2,9 @@
     <div id="container">
         <div class="project-details" v-if="projectExists && hasInitialized">
             <div class="head-banner">
-                <img class="banner" :src="getImageSrc(project.banner)"/>
+                <img alt="banner" class="banner" :src="getImageSrc(project.banner)"/>
                 <div class="icon-ghost">
-                    <img class="icon" :src="getImageSrc(project.icon)"/>
+                    <img alt="icon" class="icon" :src="getImageSrc(project.icon)"/>
                 </div>
             </div>
             <a class="project-link-top" :href="project['link-url']">{{ project["link-title"] }}</a>
@@ -46,7 +46,7 @@
     });
 
     function getImageSrc(name) {
-        return new URL(`/src/assets/images/${name}`, import.meta.url);
+        return `/static/${name}`;
     }
 </script>
 

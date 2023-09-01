@@ -21,7 +21,7 @@
 
 <script setup>
     import { ref } from "vue";
-    import Blogs from "@/assets/blogs/blogs.json";
+    import Blogs from "@/assets/blogs.json";
     
     const isBlogListEmpty = ref(Blogs.length == 0);
 </script>
