@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <div id="container">
         <div class="text-container">
@@ -10,12 +7,14 @@
     </div>
 </template>
 
+<script setup />
+
 <style scoped>
     #container {
+        background-color: midnightblue;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: midnightblue;
     }
     
     .text-container {
@@ -23,14 +22,13 @@
     }
 
     .title {
-        font-size: 3rem;
         color: white;
+        font-size: 3rem;
     }
 
     .description {
-        
-        font-size: 2rem;
         color: lightgray;
+        font-size: 2rem;
     }
 
     @media (max-width: 45rem) {

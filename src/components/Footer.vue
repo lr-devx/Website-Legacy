@@ -1,15 +1,35 @@
+<template>
+    <div id="footer">
+        <select class="language-switch" v-model="selectedLanguage" @change="changeLanguage">
+            <option v-for="language in languages" :value="language.code">
+                {{ language.name }}
+            </option>
+        </select>
+        <h3 class="copyright"> {{ $t("copyright") }}</h3>
+        <div class="external-items">
+            <a target="_blank" href="https://www.youtube.com/@aliandead">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+            <a target="_blank" href="https://github.com/aliandead">
+                <i class="fa fa-github"></i>
+            </a>
+            <a target="_blank" href="https://instagram.com/aliandead">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</template>
+
 <script setup>
     import { useI18n } from "vue-i18n";
     import { useRoute } from "vue-router";
     import { ref } from "vue"
-    import supportedLanguages from "../assets/languages.json";
-    import socialinks from "../assets/links.json";
 
     const route = useRoute();
 
     const i18n = useI18n();
     const selectedLanguage = ref(i18n.locale.value);
-    const links = ref(socialinks);
+    const languages = ref(i18n.messages.value);
 
     function changeLanguage(e) {
         i18n.locale.value = e.target.selectedOptions[0].value;
@@ -18,74 +38,52 @@
     }
 </script>
 
-<template>
-    <div id="footer">
-        <select class="language-switch" v-model="selectedLanguage" @change="changeLanguage">
-            <option v-for="language in supportedLanguages" :value="language.code">
-                {{ language.name }}
-            </option>
-        </select>
-        <h3 class="copyright"> {{ $t("copyright") }}</h3>
-        <div class="external-items">
-            <a target="_blank" :href="links.youtube">
-                <i class="fa fa-youtube-play"></i>
-            </a>
-            <a target="_blank" :href="links.github">
-                <i class="fa fa-github"></i>
-            </a>
-            <a target="_blank" :href="links.instagram">
-                <i class="fa fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-</template>
-
 <style scoped>
     #footer {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        background-color: darkcyan;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
-        background-color: darkcyan;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     .language-switch {
+        text-align: center;
         width: 8rem;
         height: 2rem;
-        border: 0;
+        border: none;
         appearance: none;
-        text-align: center;
         margin-left: 1rem;
     }
 
     .language-switch option {
-        border: 0;
+        border: none;
     }
 
     .copyright {
+        color: white;
         font-size: fit-content;
         word-wrap: break-word;
         margin-left: auto;
         margin-right: auto;
-        color: white;
     }
 
     .external-items {
-        margin-left: auto;
         display: flex;
         align-items: center;
+        margin-left: auto;
     }
 
     .external-items a {
         text-decoration: none;
-        margin-right: 1rem;
         font-size: 2rem;
         width: 2rem;
         height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-right: 1rem;
     }
 
     .external-items i {
@@ -110,14 +108,14 @@
         }
 
         .copyright {
-            padding: 1rem;
             text-align: center;
+            padding: 1rem;
         }
 
         .external-items {
-            margin-bottom: 1rem;
             display: flex;
             justify-content: center;
+            margin-bottom: 1rem;
         }
     }
 </style>

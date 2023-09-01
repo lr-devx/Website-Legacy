@@ -1,24 +1,23 @@
-<script setup>
-</script>
-
 <template>
     <div id="container">
         <h1 class="title">{{ $t("products-unavailable") }}</h1>
     </div>
 </template>
 
+<script setup />
+
 <style scoped>
     #container {
+        background-color: darkslateblue;
+        text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        background-color: darkslateblue;
     }
 
     .title {
-        font-size: 3rem;
         color: white;
+        font-size: 3rem;
     }
 
     @media (max-width: 45rem) {

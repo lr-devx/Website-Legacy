@@ -1,19 +1,20 @@
 import { createI18n } from "vue-i18n";
+import locales from "@/locales/locales.json";
 
-import enI18n from "./locales/en.json";
-import frI18n from "./locales/fr.json";
-
-const defaultLanguage = "en";
+const defaultLanguage = locales[0].code;
 const language = localStorage.getItem('lang') || defaultLanguage;
+
+const messages = {};
+
+for (let i = 0; i < locales.length; i++) {
+    messages[locales[i].code] = locales[i];
+}
 
 const i18n = createI18n({
     legacy: false,
     locale: language,
     fallbackLocale: defaultLanguage,
-    messages: {
-        en: enI18n,
-        fr: frI18n
-    }
+    messages: messages
 });
 
 export default i18n;

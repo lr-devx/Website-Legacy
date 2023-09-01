@@ -1,35 +1,10 @@
-<script setup>
-    import { ref } from "vue";
-    import { useRoute } from "vue-router";
-
-    const route = useRoute();
-    
-    const project = ref({});
-    const projectExists = ref(false);
-    const hasInitialized = ref(false);
-
-    import(`../assets/projects/${route.query.id}.json`).then(module => {
-            project.value = module.default || {};
-            projectExists.value = true;
-            hasInitialized.value = true;
-    }).catch(err => {
-            hasInitialized.value = true;
-            console.warn(`Project details were not found (${route.query.id}.json)`);
-            console.error(err);
-    });
-
-    function getImageSrc(type, name) {
-        return new URL(`/src/assets/${type}/${name}`, import.meta.url);
-    }
-</script>
-
 <template>
     <div id="container">
         <div class="project-details" v-if="projectExists && hasInitialized">
             <div class="head-banner">
-                <img class="banner" :src="getImageSrc('banners', project.banner)"/>
+                <img class="banner" :src="getImageSrc(project.banner)"/>
                 <div class="icon-ghost">
-                    <img class="icon" :src="getImageSrc('icons', project.icon)"/>
+                    <img class="icon" :src="getImageSrc(project.icon)"/>
                 </div>
             </div>
             <a class="project-link-top" :href="project['link-url']">{{ project["link-title"] }}</a>
@@ -50,11 +25,36 @@
     </div>
 </template>
 
+<script setup>
+    import { ref } from "vue";
+    import { useRoute } from "vue-router";
+
+    const route = useRoute();
+    
+    const project = ref({});
+    const projectExists = ref(false);
+    const hasInitialized = ref(false);
+
+    import(`@/assets/projects/${route.query.id}.json`).then(module => {
+            project.value = module.default || {};
+            projectExists.value = true;
+            hasInitialized.value = true;
+    }).catch(err => {
+            hasInitialized.value = true;
+            console.warn(`Project details were not found (${route.query.id}.json)`);
+            console.error(err);
+    });
+
+    function getImageSrc(name) {
+        return new URL(`/src/assets/images/${name}`, import.meta.url);
+    }
+</script>
+
 <style scoped>
     #container {
+        background-color: mediumorchid;
         display: flex;
         justify-content: center;
-        background-color: mediumorchid;
     }
 
     .project-details {
@@ -67,36 +67,36 @@
     }
 
     .icon-ghost {
-        position: absolute;
         background-color: mediumorchid;
         width: 16rem;
         height: 16rem;
-        margin-left: 6rem;
-        top: 192px;
         border-radius: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        top: 192px;
+        margin-left: 6rem;
     }
 
     .icon {
+        border-radius: 4rem;
         position: absolute;
         width: 15rem;
         height: 15rem;
-        border-radius: 4rem;
     }
 
     .project-link-top {
         background-color: #f0f0f0;
         color: black;
-        float: right;
-        margin: 32px;
-        padding-top: 12px;
-        padding-bottom: 12px;
         width: 192px;
         text-align: center;
         text-decoration: none;
         border: none;
+        float: right;
+        margin: 32px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .project-link-top:hover {

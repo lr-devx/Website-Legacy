@@ -1,16 +1,7 @@
-<script setup>
-    import { ref } from "vue";
-    
-    import ProjectCard from "../components/ProjectCard.vue";
-    import Projects from "../assets/projects.json";
-
-    const isProjectListEmpty = ref(Projects.length == 0);
-</script>
-
 <template>
     <div id="container">
         <div v-if="!isProjectListEmpty" class="projects-container">
-            <ProjectCard v-for="project in Projects" show-download="true" :name="project.name" :project-id="project.id" :icon="project.icon" :banner="project.banner" :description="$t(project.description)"/>
+            <Card v-for="project in Projects" show-download="true" :name="project.name" :project-id="project.id" :icon="project.icon" :banner="project.banner" :description="project.description"/>
         </div>
         <div id="no-projects-container" v-else>
             <p>{{ $t("no-projects-yet") }}</p>
@@ -19,20 +10,29 @@
     </div>
 </template>
 
+<script setup>
+    import { ref } from "vue";
+    
+    import Card from "@/components/Card.vue";
+    import Projects from "@/assets/projects/projects.json";
+
+    const isProjectListEmpty = ref(Projects.length == 0);
+</script>
+
 <style scoped>
     #container {
+        background-color: mediumspringgreen;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: mediumspringgreen;
     }
 
     .projects-container {
-        margin: 24px 0px 24px 0px;
         display: grid;
-        justify-content: center;
         grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
         gap: 2rem;
+        margin: 24px 0px 24px 0px;
     }
 
     #no-projects-container {

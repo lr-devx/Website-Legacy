@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import HomeView from "./views/HomeView.vue";
-import BlogListViewer from "./views/BlogListView.vue";
-import BlogView from "./views/BlogView.vue";
-import ProjectListView from "./views/ProjectListView.vue";
-import ProjectDetailsView from "./views/ProjectDetailsView.vue";
-import PricingView from "./views/PricingView.vue";
-import AboutView from "./views/AboutView.vue";
-import NotFoundView from "./views/NotFoundView.vue";
+import HomeView from "./views/Home.vue";
+import BlogListViewer from "./views/BlogList.vue";
+import BlogView from "./views/BlogViewer.vue";
+import ProjectListView from "./views/ProjectList.vue";
+import ProjectDetailsView from "./views/ProjectDetails.vue";
+import PricingView from "./views/Pricing.vue";
+import AboutView from "./views/About.vue";
+import NotFoundView from "./views/NotFound.vue";
 
 const routes = [
     {

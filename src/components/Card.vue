@@ -1,3 +1,19 @@
+<template>
+    <div id="card">
+        <div class="head-banner">
+            <img :src="getImageSrc(banner)"/>
+            <div class="icon-ghost">
+                <img class="icon" :src="getImageSrc(icon)"/>
+            </div>
+        </div>
+        <h1 class="name">{{ name }}</h1>
+        <h3 class="description">{{ description }}</h3>
+        <RouterLink class="view-details" v-if="showDownload == 'true'" :to="{path: 'projects/details', query: { id: projectId }}">
+            {{ $t("view-details") }}
+        </RouterLink>
+    </div>
+</template>
+
 <script setup>
     import { RouterLink } from 'vue-router';
 
@@ -10,26 +26,10 @@
         showDownload: String
     });
 
-    function getImageSrc(type, name) {
-        return new URL(`/src/assets/${type}/${name}`, import.meta.url);
+    function getImageSrc(name) {
+        return new URL(`/src/assets/images/${name}`, import.meta.url);
     }
 </script>
-
-<template>
-    <div id="card">
-        <div class="head-banner">
-            <img :src="getImageSrc('banners', banner)"/>
-            <div class="icon-ghost">
-                <img class="icon" :src="getImageSrc('icons', icon)"/>
-            </div>
-        </div>
-        <h1 class="name">{{ name }}</h1>
-        <h3 class="description">{{ description }}</h3>
-        <RouterLink class="view-details" v-if="showDownload == 'true'" :to="{path: 'projects/details', query: { id: projectId }}">
-            {{ $t("view-details") }}
-        </RouterLink>
-    </div>
-</template>
 
 <style scoped>
     #card {
@@ -44,13 +44,13 @@
     }
 
     .icon-ghost {
-        position: absolute;
         background-color: gold;
         width: 8rem;
         height: 8rem;
         margin: 1.5rem;
         border-radius: 4rem;
         display: flex;
+        position: absolute;
         align-items: center;
         justify-content: center;
     }
@@ -75,15 +75,15 @@
     }
 
     .view-details {
-        display: block;
+        background-color: #f0f0f0;
+        text-decoration: none;
+        text-align: center;
         width: 90%;
-        padding: 0.5rem;
+        display: block;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0.5rem;
-        text-decoration: none;
-        text-align: center;
-        background-color: #f0f0f0;
+        padding: 0.5rem;
     }
 
     .view-details:hover {
