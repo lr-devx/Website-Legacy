@@ -21,8 +21,17 @@
         <input class="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
     </div>
     <label class="navbar-menu" v-if="isNavbarShown">
-        <li v-for="item in navItems" :key="item.name">
-            <RouterLink :to="item.path">{{ $t(item.name) }}</RouterLink>
+        <li>
+            <RouterLink to="/">{{ $t("home") }}</RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/blogs">{{ $t("blogs") }}</RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/projects">{{ $t("projects") }}</RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/about">{{ $t("about") }}</RouterLink>
         </li>
         <li class="shiny-item">
             <RouterLink to="/pricing">{{ $t("pricing") }}</RouterLink>
