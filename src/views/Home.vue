@@ -4,7 +4,9 @@
             <div class="slide-data">
                 <h1 class="slide-title">{{ $t("slide-title") }}</h1>
                 <h3 class="slide-description">{{ $t("slide-description") }}</h3>
-                <button class="slide-button" @click="$router.push('/blogs')">{{ $t("slide-button") }}</button>
+                <RouterLink class="slide-button" to="/blogs">
+                    {{ $t("slide-button") }}
+                </RouterLink>
             </div>
         </div>
         <div class="description">
@@ -21,11 +23,15 @@
             <div class="projects-cards">
                 <Card v-for="project in Projects.slice(0, 6)" :name="project.name" :icon="project.icon" :banner="project.banner" :description="project.description"/> 
             </div>
-            <button class="projects-see-more" @click="$router.push('/projects')">{{ $t("see-more") }}</button>
+            <RouterLink class="projects-see-more" to="/projects">
+                    {{ $t("see-more") }}
+            </RouterLink>
         </div>
         <div class="pricing">
             <h1 class="pricing-title">{{ $t("pricing-title") }}</h1>
-            <button class="pricing-button"  @click="$router.push('/pricing')">{{ $t("check-plans") }}</button>
+            <RouterLink class="pricing-button" to="/pricing">
+                    {{ $t("check-plans") }}
+            </RouterLink>
         </div>
     </div>
 </template>
@@ -75,11 +81,14 @@
     }
 
     .slide-button {
-        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: #f0f0f0;
         width: 12rem;
         height: 3rem;
-        border: none;
-        display: block;
+        text-decoration: none;
         margin-left: auto;
         margin-right: auto;
         margin-top: 2rem;
@@ -129,10 +138,14 @@
     }
 
     .projects-see-more {
-        width: 9rem;
-        height: 2.5rem;
-        border: none;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: #f0f0f0;
+        width: 10rem;
+        height: 3rem;
+        text-decoration: none;
         margin-top: 2rem;
         margin-left: auto;
         margin-right: auto;
@@ -155,10 +168,14 @@
     }
 
     .pricing-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: #f0f0f0;
         width: 12rem;
         height: 3rem;
-        border: none;
-        display: block;
+        text-decoration: none;
         margin-left: auto;
         margin-right: auto;
     }

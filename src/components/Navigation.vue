@@ -175,7 +175,6 @@
 
     .shiny-link:hover {
         background-color: red;
-        cursor: default;
         user-select: none;
     }
 
@@ -209,6 +208,7 @@
         border: none;
         display: none;
         position: fixed;
+        cursor: pointer;
         bottom: 1rem;
         right: 1rem;
     }

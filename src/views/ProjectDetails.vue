@@ -7,13 +7,17 @@
                     <img alt="icon" class="icon" :src="getImageSrc(project.icon)" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
                 </div>
             </div>
-            <a class="project-link-top" :href="project['link-url']">{{ project["link-title"] }}</a>
+            <button class="project-link-top" @click="openLink(project['link-url'])">
+                {{ project["link-title"] }}
+            </button>
             <div class="main-content">
                 <h1 class="project-name">{{ project.name }}</h1>
                 <h2 class="project-desc">{{ project.desc }}</h2>
                 <h3 class="project-long-desc">{{ project["long-desc"] }}</h3>
             </div>
-            <a class="project-link-bottom" :href="project['link-url']">{{ project["link-title"] }}</a>
+            <button class="project-link-bottom" @click="openLink(project['link-url'])">
+                {{ project["link-title"] }}
+            </button>
         </div>
         <div v-else-if="hasInitialized" class="not-found">
             <h1 class="not-found-title">{{ $t("project-not-found-title") }}</h1>
@@ -44,6 +48,10 @@
             console.warn(`Project details were not found (${route.query.id}.json)`);
             console.error(err);
     });
+
+    function openLink(link) {
+        window.location.href = link;
+    }
 
     function getImageSrc(name) {
         return `/static/${name}`;
