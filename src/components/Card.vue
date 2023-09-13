@@ -1,9 +1,9 @@
 <template>
     <div id="card">
         <div class="head-banner">
-            <img alt="banner" :src="getImageSrc(banner)"/>
+            <img alt="banner" :src="getImageSrc(banner)" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
             <div class="icon-ghost">
-                <img alt="icon" class="icon" :src="getImageSrc(icon)"/>
+                <img alt="icon" class="icon" :src="getImageSrc(icon)" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
             </div>
         </div>
         <h1 class="name">{{ name }}</h1>
@@ -29,6 +29,10 @@
     function getImageSrc(name) {
         return `/static/${name}`;
     }
+
+    function getEmptyIcon() {
+        return "";
+    }
 </script>
 
 <style scoped>
@@ -40,6 +44,8 @@
     }
 
     .head-banner {
+        height: 8rem;
+        background-color: black;
         display: flex;
     }
 
@@ -56,6 +62,7 @@
     }
 
     .icon {
+        background-color: black;
         position: absolute;
         width: 7rem;
         height: 7rem;

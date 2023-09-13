@@ -98,7 +98,7 @@
         color: white;
     }
 
-    @media (max-width: 66rem) {
+    @media (max-width: 70rem) {
         #footer {
             display: block;
             padding-top: 1rem;

@@ -18,6 +18,7 @@
     .title {
         color: white;
         font-size: 3rem;
+        margin: 10%;
     }
 
     @media (max-width: 45rem) {

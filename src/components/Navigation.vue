@@ -20,7 +20,7 @@
         </ul>
         <input class="navbar-switcher" ref="navBarButton" type="checkbox" @click="isNavbarShown = !isNavbarShown" :checked="isNavbarShown"/>
     </div>
-    <label class="navbar-menu" v-if="isNavbarShown">
+    <label class="navbar-menu" v-if="isNavbarShown" ref="navigationMobile">
         <li>
             <RouterLink to="/">{{ $t("home") }}</RouterLink>
         </li>
@@ -49,10 +49,36 @@
     const isNavbarShown = ref(false);
     const navBarButton = ref(null);
     const navigation = ref(null);
+    const navigationMobile = ref(null);
     const backButton = ref(null);
 
     watch(() => route.fullPath, () => {
         isNavbarShown.value = false;
+    });
+
+    window.addEventListener("click", (e) => {
+        if (!navigationMobile || !isNavbarShown.value) {
+            return;
+        }
+
+        if (e.target.className == "navbar-switcher") {
+            return;
+        }
+
+        let currentElement = e.target;
+        let isChildElement = false;
+
+        while (currentElement !== null) {
+            if (currentElement === navigationMobile.value) {
+                isChildElement = true;
+            }
+
+            currentElement = currentElement.parentNode;
+        }
+
+        if (!isChildElement) {
+            isNavbarShown.value = false;
+        }
     });
 
     window.addEventListener("resize", function() {
