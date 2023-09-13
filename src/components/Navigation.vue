@@ -12,7 +12,7 @@
                 <RouterLink to="/projects">{{ $t("projects") }}</RouterLink>
             </li>
             <li class="normal-link">
-                <RouterLink to="/mystery">{{ $t("mystery") }}</RouterLink>
+                <RouterLink to="/unveiled-mystery">{{ $t("the-unknown") }}</RouterLink>
             </li>
             <RouterLink to="/pricing">
                 <li class="shiny-link">{{ $t("pricing") }}</li>
@@ -31,7 +31,7 @@
             <RouterLink to="/projects">{{ $t("projects") }}</RouterLink>
         </li>
         <li>
-            <RouterLink to="/mystery">{{ $t("mystery") }}</RouterLink>
+            <RouterLink to="/unveiled-mystery">{{ $t("the-unknown") }}</RouterLink>
         </li>
         <li class="shiny-item">
             <RouterLink to="/pricing">{{ $t("pricing") }}</RouterLink>

@@ -6,7 +6,7 @@ import BlogView from "./views/BlogViewer.vue";
 import ProjectListView from "./views/ProjectList.vue";
 import ProjectDetailsView from "./views/ProjectDetails.vue";
 import PricingView from "./views/Pricing.vue";
-import MysteryView from "./views/Mystery.vue";
+import UnknownView from "./views/TheUnknown.vue";
 import NotFoundView from "./views/NotFound.vue";
 
 const routes = [
@@ -41,9 +41,9 @@ const routes = [
         "component": PricingView
     },
     {
-        "path": "/mystery",
-        "name": "mystery",
-        "component": MysteryView
+        "path": "/unveiled-mystery",
+        "name": "the-unknown",
+        "component": UnknownView
     },
     {
         "path": "/:catchAll(.*)",
