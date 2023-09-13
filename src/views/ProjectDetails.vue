@@ -2,9 +2,9 @@
     <div id="container">
         <div class="project-details" v-if="projectExists && hasInitialized">
             <div class="head-banner">
-                <img alt="banner" class="banner" :src="getImageSrc(project.banner)"/>
+                <img alt="banner" class="banner" :src="getImageSrc(project.banner)" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
                 <div class="icon-ghost">
-                    <img alt="icon" class="icon" :src="getImageSrc(project.icon)"/>
+                    <img alt="icon" class="icon" :src="getImageSrc(project.icon)" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
                 </div>
             </div>
             <a class="project-link-top" :href="project['link-url']">{{ project["link-title"] }}</a>
@@ -63,6 +63,7 @@
     }
 
     .banner {
+        background-color: black;
         height: 256px;
     }
 
@@ -80,6 +81,7 @@
     }
 
     .icon {
+        background-color: black;
         border-radius: 4rem;
         position: absolute;
         width: 15rem;

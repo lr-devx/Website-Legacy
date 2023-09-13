@@ -29,10 +29,6 @@
     function getImageSrc(name) {
         return `/static/${name}`;
     }
-
-    function getEmptyIcon() {
-        return "";
-    }
 </script>
 
 <style scoped>
