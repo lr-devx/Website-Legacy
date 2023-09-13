@@ -1,8 +1,8 @@
 <template>
     <div id="container">
         <div class="text-container">
-            <h1>Did you expect me to say anything?</h1>
-            <h3>(In fact I have nothing to say)</h3>
+            <h1>[TEXT_MAIN]</h1>
+            <h3>[TEXT_SUB]</h3>
         </div>
     </div>
 </template>
