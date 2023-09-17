@@ -40,17 +40,12 @@
     import { ref } from "vue";
     import Card from "@/components/Card.vue";
     import Projects from "@/assets/projects.json";
-
+    
     const isProjectListEmpty = ref(Projects.length == 0);
 </script>
 
 <style scoped>
-    #container {
-        background-color: wheat;
-    }
-
     .slide {
-        background-color: blue;
         width: 100%;
         height: 36rem;
         overflow: hidden;
@@ -65,13 +60,15 @@
 
     .slide-title {
         color: white;
+        text-shadow: 0 0 10px mediumpurple, 0 0 20px mediumpurple, 0 0 40px mediumpurple;
         text-align: center;
         font-size: 3rem;
         transition: opacity 0.5s ease;
     }
 
     .slide-description {
-        color: lightgray;
+        color: white;
+        text-shadow: 0 0 10px mediumpurple, 0 0 20px mediumpurple, 0 0 40px mediumpurple;
         text-align: center;
         font-weight: 600;
         font-size: 1.5rem;
@@ -99,7 +96,6 @@
     }
 
     .description {
-        background-color: saddlebrown;
         padding: 1rem;
     }
 
@@ -117,7 +113,6 @@
     }
 
     .projects {
-        background-color: indianred;
         padding-bottom: 2rem;
     }
 
@@ -156,7 +151,6 @@
     }
 
     .pricing {
-        background-color: blueviolet;
         padding-bottom: 2rem;
     }
 
@@ -183,7 +177,7 @@
     .pricing-button:hover {
         background-color: red;
     }
-
+    
     @media (max-width: 66rem) {
         .projects-cards {
             grid-template-columns: 1fr 1fr;

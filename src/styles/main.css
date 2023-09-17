@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: black;
+    background: url("/static/upscale_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #app {

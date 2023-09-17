@@ -27,10 +27,6 @@
 </script>
 
 <style scoped>
-    #container {
-        background-color: burlywood;
-    }
-
     .main-title {
         color: white;
         text-align: center;
@@ -55,6 +51,7 @@
     .blog-item-content {
         background-color: deeppink;
         height: 8rem;
+        border-radius: 16px;
     }
 
     .blog-item-title {
@@ -86,6 +83,7 @@
         width: max-content;
         margin-right: 0.5rem;
         padding: 0.25rem;
+        border-radius: 4px;
     }
 
     .no-blogs-container {

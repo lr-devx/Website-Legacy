@@ -37,6 +37,9 @@
         width: 20rem;
         height: auto;
         margin: auto;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     .head-banner {
@@ -87,6 +90,7 @@
         margin-right: auto;
         margin-bottom: 0.5rem;
         padding: 0.5rem;
+        border-radius: 6px;
     }
 
     .view-details:hover {

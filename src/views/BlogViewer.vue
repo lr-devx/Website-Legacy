@@ -55,7 +55,6 @@
 
 <style scoped>
     #container {
-        background-color: green;
         display: flex;
         justify-content: center;
     }

@@ -124,7 +124,7 @@
 
 <style scoped>
     #navbar {
-        background-color: orangered;
+        background-color: rgba(0, 0, 0, 0.5);
         height: 5rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -132,7 +132,7 @@
     }
 
     .main-title {
-        color: black;
+        color: white;
         font-size: 2rem;
         font-weight: Bold;
         text-decoration: none;
@@ -153,12 +153,13 @@
     }
 
     .navbar-items a {
+        color: white;
         text-decoration: none;
         min-width: 100px;
     }
 
     .navbar-items a:hover {
-        color: black;
+        color: gray;
     }
 
     .shiny-link {
@@ -174,7 +175,7 @@
     }
 
     .shiny-link:hover {
-        background-color: red;
+        background-color: gray;
         user-select: none;
     }
 

@@ -21,7 +21,6 @@
 
 <style scoped>
     #container {
-        background-color: mediumspringgreen;
         display: flex;
         justify-content: center;
         align-items: center;

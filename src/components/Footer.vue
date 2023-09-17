@@ -44,7 +44,7 @@
 
 <style scoped>
     #footer {
-        background-color: darkcyan;
+        background-color: rgba(0, 0, 0, 0.5);
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
@@ -91,11 +91,11 @@
     }
 
     .external-items i {
-        color: black;
+        color: white;
     }
 
     .external-items i:hover {
-        color: white;
+        color: gray;
     }
 
     @media (max-width: 70rem) {

@@ -8,7 +8,6 @@
 
 <style scoped>
     #container {
-        background-color: darkslateblue;
         text-align: center;
         display: flex;
         justify-content: center;

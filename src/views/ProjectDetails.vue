@@ -60,7 +60,6 @@
 
 <style scoped>
     #container {
-        background-color: mediumorchid;
         display: flex;
         justify-content: center;
     }
@@ -76,7 +75,7 @@
     }
 
     .icon-ghost {
-        background-color: mediumorchid;
+        background-color: white;
         width: 16rem;
         height: 16rem;
         border-radius: 4rem;
