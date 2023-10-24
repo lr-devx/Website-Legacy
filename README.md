@@ -1,4 +1,4 @@
-# Alian's Journey Website
+# Alian's Journey Website (!!DEPRECATED!!)
 This website contains my projects, blogs and more.
 
 ## Status
