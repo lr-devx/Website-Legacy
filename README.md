@@ -1,6 +1,8 @@
 # Alian's Journey Website (!!DEPRECATED!!)
 This website contains my projects, blogs and more.
 
+NEW REPO: https://github.com/aliandead/Website
+
 ## Status
 
 Production: [![Netlify Prod Status](https://api.netlify.com/api/v1/badges/44ecf80d-e9a9-424c-be28-0da94603d206/deploy-status)](https://app.netlify.com/sites/aliandead/deploys)
