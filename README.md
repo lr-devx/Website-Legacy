@@ -1,7 +1,7 @@
 # Alian's Journey Website (!!DEPRECATED!!)
 This website contains my projects, blogs and more.
 
-NEW REPO: https://github.com/aliandead/Website
+NEW REPO AVAILABLE HERE: https://github.com/aliandead/Website
 
 ## Status
 
